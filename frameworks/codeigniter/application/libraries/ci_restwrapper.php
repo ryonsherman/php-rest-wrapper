@@ -36,7 +36,7 @@ class CI_RESTWrapper
         }
         
         // Initialize REST client
-        $client = new RESTWrapper('/', APPPATH . "libraries/{$class}.json", $params);
+        $client = new RESTWrapper(@$params['url'], APPPATH . "libraries/{$class}.json", $params);
 
         // Assign client resources for local access
         foreach (array_keys(get_object_vars($client)) as $res)
