@@ -63,7 +63,7 @@ class RESTWrapper {
         foreach ($headers as $header) $command .= " -H '{$header}'";
         $command .= " -X '{$method}'";
         if ($data) $command .= " -d '{$data}'";
-        $command .= " {$url}";
+        $command .= " '{$url}'";
         // Log curl command
         $this->log($command);
 
