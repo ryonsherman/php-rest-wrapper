@@ -1,4 +1,4 @@
-php-rest-wrapper
+PHP RESTWrapper
 ================
 
 A PHP REST wrapper using pluggable API definitions
