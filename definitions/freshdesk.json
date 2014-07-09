@@ -1,0 +1,83 @@
+{
+    "Ticket": {
+        "create": ["POST", "/tickets.json", "ticket"],
+        "view": ["GET", "/tickets/{ticket_id}.json"],
+        "list": ["GET", "/tickets.json?filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "filter": ["GET", "/tickets/filter/{filter:!:all_tickets,new_my_open,monitored_by,spam,deleted}?format=json"],
+        "filterView": ["GET", "/tickets/view/{view_id}?format=json"],
+        "filterRequester": ["GET", "/tickets/filter/requester/{requester_id}?format=json"],
+        "filterCompany": ["GET", "/tickets.json?company_id={id:}&company_name={name:}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "filterEmail": ["GET", "/tickets.json?email={email}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "update": ["PUT", "/tickets/{ticket_id}.json", "ticket"],
+        "pick": ["PUT", "/tickets/{ticket_id}/pick_tickets.json"],
+        "delete": ["DELETE", "/tickets/{ticket_id}.json"],
+        "restore": ["PUT", "/tickets/{ticket_id}/restore.json"],
+        "assign": ["PUT", "/tickets/{ticket_id}/assign.json?responder_id={user_id}"],
+        "fields": ["GET", "ticket_fields.json"],
+        "note": ["POST", "/tickets/{ticket_id}/conversations/note.json", "note"]
+    },
+    "User": {
+        "create": ["POST", "/contacts.json", "user"],
+        "view": ["GET", "/contacts/{contact_id}.json"],
+        "list": ["GET", "/contacts.json?query={query:}&state={state::verified,unverified,all,deleted}"],
+        "update": ["PUT", "/contacts/{contact_id}.json", "user"],
+        "delete": ["DELETE", "/contacts/{contact_id}.json"]
+    },
+    "Customer": {
+        "create": ["POST", "/customers.json", "customer"],
+        "update": ["PUT", "/customers/{customer_id}.json", "customer"],
+        "view": ["GET", "/customers/{customer_id}.json"],
+        "list": ["GET", "/customers.json?letter={name:}"],
+        "delete": ["DELETE", "/customers/{customer_id}.json"]
+    },
+    "ForumCategory": {
+        "create": ["POST", "/categories.json", "category"],
+        "update": ["PUT", "/categories/{category_id}.json", "category"],
+        "view": ["GET", "/categories/{category_id}.json"],
+        "list": ["GET", "/categories.json"],
+        "delete": ["DELETE", "/categories/{category_id}.json"]
+    },
+    "Forum": {
+        "create": ["POST", "/categories/{category_id}/forums.json", "forum"],
+        "update": ["PUT", "/categories/{category_id}/forums/{forum_id}.json", "forum"],
+        "view": ["GET", "/categories/{category_id}/forums/{forum_id}.json"],
+        "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}.json"]
+    },
+    "Topic": {
+        "create": ["POST", "/categories/{category_id}/forums/{forum_id}/topics.json", "topic"],
+        "update": ["PUT", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json", "forum"],
+        "view": ["GET", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json"],
+        "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json"]
+    },
+    "Post": {
+        "create": ["POST", "/posts.json", "post"],
+        "update": ["PUT", "/posts/{post_id}.json", "post"],
+        "delete": ["DELETE", "/posts/{post_id}.json"]
+    },
+    "Monitor": {
+        "set": ["POST", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}/monitorship.json"],
+        "unset": ["DELETE", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}/monitorship.json"],
+        "topics": ["GET", "/support/discussions/user_monitored?user_id={user_id}"],
+        "status": ["GET", "/support/discussions/topics/{topic_id}/check_monitor.json?user_id={user_id}"]
+    },
+    "SolutionCategory": {
+        "create": ["POST", "/solution/categories.json", "category"],
+        "update": ["PUT", "/solution/categories/{category_id}.json", "category"],
+        "view": ["GET", "/solution/categories/{category_id}"],
+        "list": ["GET", "/solution/categories.json"],
+        "delete": ["DELETE", "/solution/categories/{category_id}.json"]
+    },
+    "SolutionFolder": {
+        "create": ["POST", "/solution/categories/{category_id}/folders.json", "folder"],
+        "update": ["PUT", "/solution/categories/{category_id}/folders/{folder_id}.json", "folder"],
+        "view": ["GET", "/solution/categories/{category_id}/folders/{folder_id}.json"],
+        "delete": ["DELETE", "/solution/categories/{category_id}/folders/{folder_id}.json"]
+    },
+    "SolutionArticle": {},
+    "TimeEntry": {},
+    "Survey": {
+        "create": ["POST", "/tickets/{ticket_id}/surveys/rate.json?rating={rating}", "survey"],
+        "view": ["GET", "/tickets/{ticket_id}/surveys.json"]
+    },
+    "Groups": {}
+}
