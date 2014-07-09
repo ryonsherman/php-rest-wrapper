@@ -112,7 +112,10 @@ class RESTResource {
 
         // Get function args
         $_args = array();
-        foreach ($args as $arg) $_args[] = explode(':', $arg)[0];
+        foreach ($args as $arg) {
+            $_arg = explode(':', $arg);
+            $_args[] = $_arg[0];
+        }
         $_args = implode(', ', $_args);
 
         // Iterate list of args
