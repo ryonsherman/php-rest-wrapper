@@ -2,11 +2,7 @@
     "Ticket": {
         "root": "/helpdesk/tickets",
         "options": "all_tickets,new_my_open,monitored_by,spam,deleted",
-<<<<<<< HEAD
         "create": ["POST", "{root}.json", "data"],
-=======
-        "create": ["POST", "{root}.json", "ticket"],
->>>>>>> c094458219142f0c7fa95006268d3c2943b19527
         "view": ["GET", "{root}/{ticket_id}.json"],
         "list": ["GET", "{root}.json?filter_name={filter:all_tickets:{options}}"],
         "filter": ["GET", "{root}/filter/{filter:!:{options}}?format=json"],
@@ -15,11 +11,7 @@
         "filterCompany": ["GET", "{root}.json?company_id={company_id}&filter_name={filter:all_tickets:{options}}"],
         "filterCompanyName": ["GET", "{root}.json?&company_name={name}&filter_name={filter:all_tickets:{options}}"],
         "filterEmail": ["GET", "{root}.json?email={email}&filter_name={filter:all_tickets:{options}}"],
-<<<<<<< HEAD
         "update": ["PUT", "{root}/{ticket_id}.json", "data"],
-=======
-        "update": ["PUT", "{root}/{ticket_id}.json", "ticket"],
->>>>>>> c094458219142f0c7fa95006268d3c2943b19527
         "pick": ["PUT", "{root}/{ticket_id}/pick_tickets.json"],
         "delete": ["DELETE", "{root}/{ticket_id}.json"],
         "restore": ["PUT", "{root}/{ticket_id}/restore.json"],
@@ -105,11 +97,7 @@
         "root": "/helpdesk/time_sheets",
         "root_ticket": "/helpdesk/tickets/{ticket_id}/time_sheets",
         "options": "customer_id,company_name,company_email,company_email,email,start_date,end_date,billable",
-<<<<<<< HEAD
         "create": ["POST", "{root_ticket}.json", "data"],
-=======
-        "create": ["POST", "{root_ticket}.json", "time_entry"],
->>>>>>> c094458219142f0c7fa95006268d3c2943b19527
         "view": ["GET", "{root_ticket}.json"],
         "list": ["GET", "{root}.json?{filter::{options}}={value:}"],
         "filter": ["GET", "{root}.json?{filter:!:{options}}={value}"],
@@ -121,11 +109,7 @@
         "filterStartTime": ["GET", "{root}.json?start_date={value}"],
         "filterEndTime": ["GET", "{root}.json?end_date={value}"],
         "filterBillable": ["GET", "{root}.json?billable={value}"],
-<<<<<<< HEAD
         "update": ["PUT", "{root_ticket}/{time_entry_id}.json", "data"],
-=======
-        "update": ["PUT", "{root_ticket}/{time_entry_id}.json", "time_entry"],
->>>>>>> c094458219142f0c7fa95006268d3c2943b19527
         "toggleTimer": ["PUT", "{root}/{time_entry_id}/toggle_timer.json"],
         "delete": ["DELETE", "{root_ticket}/{time_entry_id}.json"]
     },
