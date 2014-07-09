@@ -1,112 +1,129 @@
 {
     "Ticket": {
-        "create": ["POST", "/helpdesk/tickets.json", "ticket"],
-        "view": ["GET", "/helpdesk/tickets/{ticket_id}.json"],
-        "list": ["GET", "/helpdesk/tickets.json?filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "filter": ["GET", "/helpdesk/tickets/filter/{filter:!:all_tickets,new_my_open,monitored_by,spam,deleted}?format=json"],
-        "filterView": ["GET", "/helpdesk/tickets/view/{view_id}?format=json"],
-        "filterRequester": ["GET", "/helpdesk/tickets/filter/requester/{requester_id}?format=json"],
-        "filterCompany": ["GET", "/helpdesk/tickets.json?company_id={company_id}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "filterCompanyName": ["GET", "/helpdesk/tickets.json?&company_name={name}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "filterEmail": ["GET", "/helpdesk/tickets.json?email={email}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "update": ["PUT", "/helpdesk/tickets/{ticket_id}.json", "ticket"],
-        "pick": ["PUT", "/helpdesk/tickets/{ticket_id}/pick_tickets.json"],
-        "delete": ["DELETE", "/helpdesk/tickets/{ticket_id}.json"],
-        "restore": ["PUT", "/helpdesk/tickets/{ticket_id}/restore.json"],
-        "assign": ["PUT", "/helpdesk/tickets/{ticket_id}/assign.json?responder_id={user_id}"],
+        "root": "/helpdesk/tickets",
+        "filter_options": "all_tickets,new_my_open,monitored_by,spam,deleted",
+        "create": ["POST", "{root}.json", "ticket"],
+        "view": ["GET", "{root}/{ticket_id}.json"],
+        "list": ["GET", "{root}.json?filter_name={filter:all_tickets:{filter_options}}"],
+        "filter": ["GET", "{root}/filter/{filter:!:{filter_options}}?format=json"],
+        "filterView": ["GET", "{root}/view/{view_id}?format=json"],
+        "filterRequester": ["GET", "{root}/filter/requester/{requester_id}?format=json"],
+        "filterCompany": ["GET", "{root}.json?company_id={company_id}&filter_name={filter:all_tickets:{filter_options}}"],
+        "filterCompanyName": ["GET", "{root}.json?&company_name={name}&filter_name={filter:all_tickets:{filter_options}}"],
+        "filterEmail": ["GET", "{root}.json?email={email}&filter_name={filter:all_tickets:{filter_options}}"],
+        "update": ["PUT", "{root}/{ticket_id}.json", "ticket"],
+        "pick": ["PUT", "{root}/{ticket_id}/pick_tickets.json"],
+        "delete": ["DELETE", "{root}/{ticket_id}.json"],
+        "restore": ["PUT", "{root}/{ticket_id}/restore.json"],
+        "assign": ["PUT", "{root}/{ticket_id}/assign.json?responder_id={user_id}"],
         "fields": ["GET", "ticket_fields.json"],
-        "note": ["POST", "/helpdesk/tickets/{ticket_id}/conversations/note.json", "note"]
+        "note": ["POST", "{root}/{ticket_id}/conversations/note.json", "note"]
     },
     "User": {
-        "create": ["POST", "/contacts.json", "user"],
-        "view": ["GET", "/contacts/{contact_id}.json"],
-        "list": ["GET", "/contacts.json?query={query:}&state={state::verified,unverified,all,deleted}"],
-        "update": ["PUT", "/contacts/{contact_id}.json", "user"],
-        "delete": ["DELETE", "/contacts/{contact_id}.json"]
+        "root": "/contacts",
+        "create": ["POST", "{root}.json", "user"],
+        "view": ["GET", "{root}/{contact_id}.json"],
+        "list": ["GET", "{root}.json?query={query:}&state={state::verified,unverified,all,deleted}"],
+        "update": ["PUT", "{root}/{contact_id}.json", "user"],
+        "delete": ["DELETE", "{root}/{contact_id}.json"]
     },
     "Customer": {
-        "create": ["POST", "/customers.json", "customer"],
-        "update": ["PUT", "/customers/{customer_id}.json", "customer"],
-        "view": ["GET", "/customers/{customer_id}.json"],
-        "list": ["GET", "/customers.json?letter={name:}"],
-        "delete": ["DELETE", "/customers/{customer_id}.json"]
+        "root": "/customers",
+        "create": ["POST", "{root}.json", "customer"],
+        "update": ["PUT", "{root}/{customer_id}.json", "customer"],
+        "view": ["GET", "{root}/{customer_id}.json"],
+        "list": ["GET", "{root}.json?letter={name:}"],
+        "delete": ["DELETE", "{root}/{customer_id}.json"]
     },
     "ForumCategory": {
-        "create": ["POST", "/categories.json", "category"],
-        "update": ["PUT", "/categories/{category_id}.json", "category"],
-        "view": ["GET", "/categories/{category_id}.json"],
-        "list": ["GET", "/categories.json"],
-        "delete": ["DELETE", "/categories/{category_id}.json"]
+        "root": "/categories",
+        "create": ["POST", "{root}.json", "category"],
+        "update": ["PUT", "{root}/{category_id}.json", "category"],
+        "view": ["GET", "{root}/{category_id}.json"],
+        "list": ["GET", "{root}.json"],
+        "delete": ["DELETE", "{root}/{category_id}.json"]
     },
     "Forum": {
-        "create": ["POST", "/categories/{category_id}/forums.json", "forum"],
-        "update": ["PUT", "/categories/{category_id}/forums/{forum_id}.json", "forum"],
-        "view": ["GET", "/categories/{category_id}/forums/{forum_id}.json"],
-        "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}.json"]
+        "root": "/categories/{category_id}/forums",
+        "create": ["POST", "{root}.json", "forum"],
+        "update": ["PUT", "{root}/{forum_id}.json", "forum"],
+        "view": ["GET", "{root}/{forum_id}.json"],
+        "delete": ["DELETE", "{root}/{forum_id}.json"]
     },
     "Topic": {
-        "create": ["POST", "/categories/{category_id}/forums/{forum_id}/topics.json", "topic"],
-        "update": ["PUT", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json", "forum"],
-        "view": ["GET", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json"],
-        "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json"]
+        "root": "/categories/{category_id}/forums/{forum_id}/topics",
+        "create": ["POST", "{root}.json", "topic"],
+        "update": ["PUT", "{root}/{topic_id}.json", "forum"],
+        "view": ["GET", "{root}/{topic_id}.json"],
+        "delete": ["DELETE", "{root}/{topic_id}.json"]
     },
     "Post": {
-        "create": ["POST", "/posts.json", "post"],
-        "update": ["PUT", "/posts/{post_id}.json", "post"],
-        "delete": ["DELETE", "/posts/{post_id}.json"]
+        "root": "/posts",
+        "create": ["POST", "{root}.json", "post"],
+        "update": ["PUT", "{root}/{post_id}.json", "post"],
+        "delete": ["DELETE", "{root}/{post_id}.json"]
     },
     "Monitor": {
-        "set": ["POST", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}/monitorship.json"],
-        "unset": ["DELETE", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}/monitorship.json"],
+        "root": "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}/monitorship",
+        "set": ["POST", "{root}.json"],
+        "unset": ["DELETE", "{root}.json"],
         "topics": ["GET", "/support/discussions/user_monitored?user_id={user_id}"],
         "status": ["GET", "/support/discussions/topics/{topic_id}/check_monitor.json?user_id={user_id}"]
     },
     "SolutionCategory": {
-        "create": ["POST", "/solution/categories.json", "category"],
-        "update": ["PUT", "/solution/categories/{category_id}.json", "category"],
-        "view": ["GET", "/solution/categories/{category_id}"],
-        "list": ["GET", "/solution/categories.json"],
-        "delete": ["DELETE", "/solution/categories/{category_id}.json"]
+        "root": "/solution/categories",
+        "create": ["POST", "{root}.json", "category"],
+        "update": ["PUT", "{root}/{category_id}.json", "category"],
+        "view": ["GET", "{root}/{category_id}"],
+        "list": ["GET", "{root}.json"],
+        "delete": ["DELETE", "{root}/{category_id}.json"]
     },
     "SolutionFolder": {
-        "create": ["POST", "/solution/categories/{category_id}/folders.json", "folder"],
-        "update": ["PUT", "/solution/categories/{category_id}/folders/{folder_id}.json", "folder"],
-        "view": ["GET", "/solution/categories/{category_id}/folders/{folder_id}.json"],
-        "delete": ["DELETE", "/solution/categories/{category_id}/folders/{folder_id}.json"]
+        "root": "/solution/categories/{category_id}/folders",
+        "create": ["POST", "{root}.json", "folder"],
+        "update": ["PUT", "{root}/{folder_id}.json", "folder"],
+        "view": ["GET", "{root}/{folder_id}.json"],
+        "delete": ["DELETE", "{root}/{folder_id}.json"]
     },
     "SolutionArticle": {
-        "create": ["POST", "/solution/categories/{category_id}/folders/{folder_id}/articles.json?tags={tags:}", "article"],
-        "update": ["PUT", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json?tags={tags:}", "article"],
-        "view": ["GET", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json"],
-        "list": ["GET", "/solution/categories/{category_id}/folders/{folder_id}.json"],
-        "delete": ["DELETE", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json"]
+        "root": "/solution/categories/{category_id}/folders/{folder_id}",
+        "create": ["POST", "{root}/articles.json?tags={tags:}", "article"],
+        "update": ["PUT", "{root}/articles/{article_id}.json?tags={tags:}", "article"],
+        "view": ["GET", "{root}/articles/{article_id}.json"],
+        "list": ["GET", "{root}.json"],
+        "delete": ["DELETE", "{root}/articles/{article_id}.json"]
     },
     "TimeEntry": {
-        "create": ["POST", "/helpdesk/tickets/{ticket_id}/time_sheets.json", "time_entry"],
-        "view": ["GET", "/helpdesk/tickets/{ticket_id}/time_sheets.json"],
-        "list": ["GET", "/helpdesk/time_sheets.json?{filter::customer_id,company_name,company_email,company_email,email,start_date,end_date,billable}={value:}"],
-        "filter": ["GET", "/helpdesk/time_sheets.json?{filter:!:customer_id,company_name,company_email,company_email,email,start_date,end_date,billable}={value}"],
-        "filterCustomer": ["GET", "/helpdesk/time_sheets.json?customer_id={value}"],
-        "filterCompany": ["GET", "/helpdesk/time_sheets.json?company_name={value}"],
-        "filterCompanyEmail": ["GET", "/helpdesk/time_sheets.json?company_email={value}"],
-        "filterAgent": ["GET", "/helpdesk/time_sheets.json?agent_id={value}"],
-        "filterAgentEmail": ["GET", "/helpdesk/time_sheets.json?agent_email={value}"],
-        "filterStartTime": ["GET", "/helpdesk/time_sheets.json?start_date={value}"],
-        "filterEndTime": ["GET", "/helpdesk/time_sheets.json?end_date={value}"],
-        "filterBillable": ["GET", "/helpdesk/time_sheets.json?billable={value}"],
-        "update": ["PUT", "/helpdesk/tickets/{ticket_id}/time_sheets/{time_entry_id}.json", "time_entry"],
-        "toggleTimer": ["PUT", "/helpdesk/time_sheets/{time_entry_id}/toggle_timer.json"],
-        "delete": ["DELETE", "/helpdesk/tickets/{ticket_id}/time_sheets/{time_entry_id}.json"]
+        "root_time": "/helpdesk/time_sheets",
+        "root_ticket": "/helpdesk/tickets/{ticket_id}/time_sheets",
+        "filter_options": "customer_id,company_name,company_email,company_email,email,start_date,end_date,billable",
+        "create": ["POST", "{root_ticket}.json", "time_entry"],
+        "view": ["GET", "{root_ticket}.json"],
+        "list": ["GET", "{root_time}.json?{filter::{filter_options}}={value:}"],
+        "filter": ["GET", "{root_time}.json?{filter:!:{filter_options}}={value}"],
+        "filterCustomer": ["GET", "{root_time}.json?customer_id={value}"],
+        "filterCompany": ["GET", "{root_time}.json?company_name={value}"],
+        "filterCompanyEmail": ["GET", "{root_time}.json?company_email={value}"],
+        "filterAgent": ["GET", "{root_time}.json?agent_id={value}"],
+        "filterAgentEmail": ["GET", "{root_time}.json?agent_email={value}"],
+        "filterStartTime": ["GET", "{root_time}.json?start_date={value}"],
+        "filterEndTime": ["GET", "{root_time}.json?end_date={value}"],
+        "filterBillable": ["GET", "{root_time}.json?billable={value}"],
+        "update": ["PUT", "{root_ticket}/{time_entry_id}.json", "time_entry"],
+        "toggleTimer": ["PUT", "{root_time}/{time_entry_id}/toggle_timer.json"],
+        "delete": ["DELETE", "{root_ticket}/{time_entry_id}.json"]
     },
     "Survey": {
-        "create": ["POST", "/helpdesk/tickets/{ticket_id}/surveys/rate.json?rating={rating}", "survey"],
-        "view": ["GET", "/helpdesk/tickets/{ticket_id}/surveys.json"]
+        "root": "/helpdesk/tickets/{ticket_id}/surveys",
+        "create": ["POST", "{root}/rate.json?rating={rating}", "survey"],
+        "view": ["GET", "{root}.json"]
     },
     "Groups": {
-        "create": ["POST", "/groups.json", "group"],
-        "update": ["PUT", "/groups/{group_id}.json", "group"],
-        "view": ["GET", "/groups/{group_id}"],
-        "list": ["GET", "/groups.json"],
-        "delete": ["DELETE", "/groups/{group_id}.json"]
+        "root": "/groups",
+        "create": ["POST", "{root}.json", "group"],
+        "update": ["PUT", "{root}/{group_id}.json", "group"],
+        "view": ["GET", "{root}/{group_id}"],
+        "list": ["GET", "{root}.json"],
+        "delete": ["DELETE", "{root}/{group_id}.json"]
     }
 }
