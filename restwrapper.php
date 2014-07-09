@@ -112,7 +112,7 @@ class RESTResource {
         $function = "{$this->resource}::{$name}";
 
         // Fail if unable to retrieve method defintion
-        if (!$def = @$this->definition[$name])
+        if (!$def = @$this->definition[$name] or !is_array($def) or count($def) < 2)
             return $this->error("Call to undefined method {$function}()");
 
         // Assign valid methods
@@ -130,6 +130,15 @@ class RESTResource {
 
         // Convert to array if single arg passed
         if ( ! is_array($args)) $args = array($args);
+
+        // Initialize replacement vars
+        $vars = array();
+        // Retrieve replacement vars from definition
+        foreach ($this->definition as $index => $def)
+            if (!is_array($def)) $vars[$index] = $def;
+        // Replace tags in resource string with var value
+        foreach ($vars as $tag => $value)
+            $resource = str_replace("{{$tag}}", "{$value}", $resource);
 
         // Parse args from URI tags
         preg_match_all('/{([^}]*)}/', $resource, $_args);
