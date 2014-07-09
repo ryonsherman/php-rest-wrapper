@@ -39,7 +39,7 @@ class RESTWrapper {
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 
         // Set credentials if provided
-        if ($this->username and $this->password) {
+        if ($this->username) {
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
             curl_setopt($ch, CURLOPT_USERPWD, "{$this->username}:{$this->password}");
         }
