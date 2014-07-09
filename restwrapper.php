@@ -18,7 +18,7 @@ class RESTWrapper {
             $definition = $def;
 
         // Fail if unable to load
-        if (!$definition) exit($this->error("Failed to load definition"));
+        if (!$definition) return $this->error("Failed to load definition");
 
         // Assign credeitnals
         $this->username = @$params['username'];
@@ -48,17 +48,20 @@ class RESTWrapper {
         if ($data and $data = json_encode($data)) curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
         // Execute request
-        # $data = curl_exec($ch);
-        # $info = curl_getinfo($ch);
+        $data = curl_exec($ch);
+        $info = curl_getinfo($ch);
 
-        # TODO
-        $debug = array('method' => $method, 'resource' => $resource);
-        if ($data) $debug['data'] = $data;        
-        echo '<pre>'.print_r($debug, true).'</pre>';
-        # END TODO
+        // Fail on connection error
+        if (curl_errno($ch) and $error = curl_error($ch)) {
+            curl_close($ch);
+            return $this->error("Failed to connect ({$error})");
+        }
 
         // Close request
         curl_close($ch);
+
+        // Return http code if no data was decoded
+        return ($data = @json_decode($data)) ? $data : $info['http_code'];
     }
 
     public function error($msg) {
