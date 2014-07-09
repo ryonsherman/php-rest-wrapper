@@ -1,20 +1,20 @@
 {
     "Ticket": {
-        "create": ["POST", "/tickets.json", "ticket"],
-        "view": ["GET", "/tickets/{ticket_id}.json"],
-        "list": ["GET", "/tickets.json?filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "filter": ["GET", "/tickets/filter/{filter:!:all_tickets,new_my_open,monitored_by,spam,deleted}?format=json"],
-        "filterView": ["GET", "/tickets/view/{view_id}?format=json"],
-        "filterRequester": ["GET", "/tickets/filter/requester/{requester_id}?format=json"],
-        "filterCompany": ["GET", "/tickets.json?company_id={id:}&company_name={name:}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "filterEmail": ["GET", "/tickets.json?email={email}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
-        "update": ["PUT", "/tickets/{ticket_id}.json", "ticket"],
-        "pick": ["PUT", "/tickets/{ticket_id}/pick_tickets.json"],
-        "delete": ["DELETE", "/tickets/{ticket_id}.json"],
-        "restore": ["PUT", "/tickets/{ticket_id}/restore.json"],
-        "assign": ["PUT", "/tickets/{ticket_id}/assign.json?responder_id={user_id}"],
+        "create": ["POST", "/helpdesk/tickets.json", "ticket"],
+        "view": ["GET", "/helpdesk/tickets/{ticket_id}.json"],
+        "list": ["GET", "/helpdesk/tickets.json?filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "filter": ["GET", "/helpdesk/tickets/filter/{filter:!:all_tickets,new_my_open,monitored_by,spam,deleted}?format=json"],
+        "filterView": ["GET", "/helpdesk/tickets/view/{view_id}?format=json"],
+        "filterRequester": ["GET", "/helpdesk/tickets/filter/requester/{requester_id}?format=json"],
+        "filterCompany": ["GET", "/helpdesk/tickets.json?company_id={id:}&company_name={name:}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "filterEmail": ["GET", "/helpdesk/tickets.json?email={email}&filter_name={filter:all_tickets:all_tickets,new_my_open,monitored_by,spam,deleted}"],
+        "update": ["PUT", "/helpdesk/tickets/{ticket_id}.json", "ticket"],
+        "pick": ["PUT", "/helpdesk/tickets/{ticket_id}/pick_tickets.json"],
+        "delete": ["DELETE", "/helpdesk/tickets/{ticket_id}.json"],
+        "restore": ["PUT", "/helpdesk/tickets/{ticket_id}/restore.json"],
+        "assign": ["PUT", "/helpdesk/tickets/{ticket_id}/assign.json?responder_id={user_id}"],
         "fields": ["GET", "ticket_fields.json"],
-        "note": ["POST", "/tickets/{ticket_id}/conversations/note.json", "note"]
+        "note": ["POST", "/helpdesk/tickets/{ticket_id}/conversations/note.json", "note"]
     },
     "User": {
         "create": ["POST", "/contacts.json", "user"],
@@ -76,8 +76,8 @@
     "SolutionArticle": {},
     "TimeEntry": {},
     "Survey": {
-        "create": ["POST", "/tickets/{ticket_id}/surveys/rate.json?rating={rating}", "survey"],
-        "view": ["GET", "/tickets/{ticket_id}/surveys.json"]
+        "create": ["POST", "/helpdesk/tickets/{ticket_id}/surveys/rate.json?rating={rating}", "survey"],
+        "view": ["GET", "/helpdesk/tickets/{ticket_id}/surveys.json"]
     },
     "Groups": {}
 }
