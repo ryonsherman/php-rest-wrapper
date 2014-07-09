@@ -21,10 +21,12 @@ class CI_RESTWrapper
                 $params['url'] = $this->CI->config->item('url', $class);
             if ( ! @$params['api'])
                 $params['api'] = $this->CI->config->item('api', $class);
-            if ( ! @$params['username'])
-                $params['username'] = $this->CI->config->item('username', $class);
-            if ( ! @$params['password'])
-                $params['password'] = $this->CI->config->item('password', $class);
+            if ( ! $params['api']) {
+                if ( ! @$params['username'])
+                    $params['username'] = $this->CI->config->item('username', $class);
+                if ( ! @$params['password'])
+                    $params['password'] = $this->CI->config->item('password', $class);
+            }
         }
 
         // API key takes precedence over username/password
