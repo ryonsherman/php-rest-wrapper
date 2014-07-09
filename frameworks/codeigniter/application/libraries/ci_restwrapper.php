@@ -34,7 +34,7 @@ class CI_RESTWrapper
             $params['username'] = $params['api'];
             $params['password'] = '';
         }
-        
+
         // Initialize REST client
         $client = new RESTWrapper(@$params['url'], APPPATH . "libraries/{$class}.json", $params);
 
