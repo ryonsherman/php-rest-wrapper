@@ -73,11 +73,39 @@
         "view": ["GET", "/solution/categories/{category_id}/folders/{folder_id}.json"],
         "delete": ["DELETE", "/solution/categories/{category_id}/folders/{folder_id}.json"]
     },
-    "SolutionArticle": {},
-    "TimeEntry": {},
+    "SolutionArticle": {
+        "create": ["POST", "/solution/categories/{category_id}/folders/{folder_id}/articles.json?tags={tags:}", "article"],
+        "update": ["PUT", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json?tags={tags:}", "article"],
+        "view": ["GET", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json"],
+        "list": ["GET", "/solution/categories/{category_id}/folders/{folder_id}.json"],
+        "delete": ["DELETE", "/solution/categories/{category_id}/folders/{folder_id}/articles/{article_id}.json"]
+    },
+    "TimeEntry": {
+        "create": ["POST", "/helpdesk/tickets/{ticket_id}/time_sheets.json", "time_entry"],
+        "view": ["GET", "/helpdesk/tickets/{ticket_id}/time_sheets.json"],
+        "list": ["GET", "/helpdesk/time_sheets.json?{filter::customer_id,company_name,company_email,company_email,email,start_date,end_date,billable}={value:}"],
+        "filter": ["GET", "/helpdesk/time_sheets.json?{filter:!:customer_id,company_name,company_email,company_email,email,start_date,end_date,billable}={value}"],
+        "filterCustomer": ["GET", "/helpdesk/time_sheets.json?customer_id={value}"],
+        "filterCompany": ["GET", "/helpdesk/time_sheets.json?company_name={value}"],
+        "filterCompanyEmail": ["GET", "/helpdesk/time_sheets.json?company_email={value}"],
+        "filterAgent": ["GET", "/helpdesk/time_sheets.json?agent_id={value}"],
+        "filterAgentEmail": ["GET", "/helpdesk/time_sheets.json?agent_email={value}"],
+        "filterStartTime": ["GET", "/helpdesk/time_sheets.json?start_date={value}"],
+        "filterEndTime": ["GET", "/helpdesk/time_sheets.json?end_date={value}"],
+        "filterBillable": ["GET", "/helpdesk/time_sheets.json?billable={value}"],
+        "update": ["PUT", "/helpdesk/tickets/{ticket_id}/time_sheets/{time_entry_id}.json", "time_entry"],
+        "toggleTimer": ["PUT", "/helpdesk/time_sheets/{time_entry_id}/toggle_timer.json"],
+        "delete": ["DELETE", "/helpdesk/tickets/{ticket_id}/time_sheets/{time_entry_id}.json"]
+    },
     "Survey": {
         "create": ["POST", "/helpdesk/tickets/{ticket_id}/surveys/rate.json?rating={rating}", "survey"],
         "view": ["GET", "/helpdesk/tickets/{ticket_id}/surveys.json"]
     },
-    "Groups": {}
+    "Groups": {
+        "create": ["POST", "/groups.json", "group"],
+        "update": ["PUT", "/groups/{group_id}.json", "group"],
+        "view": ["GET", "/groups/{group_id}"],
+        "list": ["GET", "/groups.json"],
+        "delete": ["DELETE", "/groups/{group_id}.json"]
+    }
 }
