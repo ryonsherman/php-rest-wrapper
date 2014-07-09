@@ -6,6 +6,9 @@ class RESTWrapper {
     private $password;
 
     public function __construct($url, $definition, $params = array()) {
+        // Set log file if provided
+        $this->logfile = @$params['log'] ?: false;
+
         // Assign base url
         $this->url = rtrim($url, '/');
 
@@ -30,9 +33,16 @@ class RESTWrapper {
     }
 
     public function request($resource, $method = 'GET', $data = null) {
+        // Determine url
+        $url = rtrim($this->url, '/') . '/' . ltrim($resource, '/');
+        // Set headers
+        $headers = array("Content-Type: application/json");
+        // Set credentials
+        $credentials = "{$this->username}:{$this->password}";
+
         // Build request
-        $ch = curl_init(rtrim($this->url, '/').'/'.ltrim($resource, '/'));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -41,11 +51,21 @@ class RESTWrapper {
         // Set credentials if provided
         if ($this->username) {
             curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-            curl_setopt($ch, CURLOPT_USERPWD, "{$this->username}:{$this->password}");
+            curl_setopt($ch, CURLOPT_USERPWD, $credentials);
         }
 
         // Set POST data if passed
         if ($data and $data = json_encode($data)) curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+        // Build curl command for debug output
+        $command = "curl";
+        if ($this->username) $command .= " -u '{$credentials}'";
+        foreach ($headers as $header) $command .= " -H '{$header}'";
+        $command .= " -X '{$method}'";
+        if ($data) $command .= " -d '{$data}'";
+        $command .= " {$url}";
+        // Log curl command
+        $this->log($command);
 
         // Execute request
         $data = curl_exec($ch);
@@ -64,9 +84,15 @@ class RESTWrapper {
         return ($data = @json_decode($data)) ? $data : $info['http_code'];
     }
 
+    public function log($msg) {
+        if ($this->logfile) file_put_contents($this->logfile, $msg, FILE_APPEND);
+    }
+
     public function error($msg) {
         $debug = debug_backtrace();
-        trigger_error("{$msg} at {$debug[1]['file']}:{$debug[1]['line']}", E_USER_ERROR);
+        $msg = "{$msg} at {$debug[1]['file']}:{$debug[1]['line']}";
+        trigger_error($msg, E_USER_ERROR);
+        $this->log($msg);
         return false;
     }
 }
@@ -108,7 +134,7 @@ class RESTResource {
         // Parse args from URI tags
         preg_match_all('/{([^}]*)}/', $resource, $_args);
         // Prepend parsed args
-        $args = array_merge(@$_args[1] ?: array(), $args);       
+        $args = array_merge(@$_args[1] ?: array(), $args);
 
         // Get function args
         $_args = array();
@@ -135,7 +161,7 @@ class RESTResource {
             // tag={value:default} default
             // tag={value::opt1,opt2} optional with options
             // tag={value:default:opt1,opt2} options and default
-            else $opt = $meta[1]; 
+            else $opt = $meta[1];
 
             // Check if a value was passed
             if (!$value = @$arguments[$index]) {
