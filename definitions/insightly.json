@@ -1,0 +1,22 @@
+{
+    "Comments": {
+        "get": ["GET", "/v2/Comments/{id}"],
+        "attachFile": ["POST", "/v2/Comments/?c_id={id}&filename={filename}", "file"],
+        "update": ["PUT", "/v2/Comments", "comment"],
+        "delete": ["DELETE", "/v2/Comments/{id}"]
+    },
+    "Contacts": {
+        "list": ["GET", "/v2/Contacts?email={email}&tag={tag}"],
+        "get": ["GET", "/v2/Contacts/{id}"],
+        "add": ["POST", "/v2/Contacts", "contact"],
+        "update": ["PUT", "/v2/Contacts", "contact"],
+        "delete": ["DELETE", "/v2/Contacts/{id}"],
+        "getEmail": ["GET", "/v2/Contacts/{id}/Emails"],
+        "getNotes": ["GET", "/v2/Contacts/{id}/Notes"],
+        "getTasks": ["GET", "/v2/Contacts/{id}/Tasks"],
+        "getImage": ["GET", "/v2/Contacts/{id}/Image"],
+        "addImage": ["POST", "/v2/Contacts/{id}/Image/{filename}", "image"],
+        "updateImage": ["PUT", "/v2/Contacts/{id}/Image/{filename}", "image"],
+        "deleteImage": ["DELETE", "/v2/Contacts/{id}/Image"]
+    }
+}
