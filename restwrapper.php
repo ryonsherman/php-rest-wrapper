@@ -80,21 +80,21 @@ class RESTResource {
         $data = array();
 
         // Get function name
-        $_method = "{$this->resource}::{$name}";
+        $function = "{$this->resource}::{$name}";
 
         // Fail if unable to retrieve method defintion
         if (!$def = @$this->definition[$name])
-            return $this->error("Call to undefined method {$_method}()");
+            return $this->error("Call to undefined method {$function}()");
 
         // Assign valid methods
         $methods = array('GET', 'PUT', 'POST', 'DELETE');
         // Fail if unable to retrieve request method from defintion or method is invalid
         if (!$method = strtoupper($def[0]) or !in_array($method, $methods))
-            return $this->parent->error("Invalid HTTP method '{$method}' in {$_funtion}()");
+            return $this->parent->error("Invalid HTTP method '{$method}' in {$function}()");
 
         // Fail if unable to retrieve resource URI from defintion
         if (!$resource = $def[1])
-            return $this->parent->error("Failed to load resource in {$_method}()");
+            return $this->parent->error("Failed to load resource in {$function}()");
 
         // Initialize args if no additional were defined
         if (!$args = @$def[2]) $args = array();
@@ -136,7 +136,7 @@ class RESTResource {
                 // Fail if no value was passed and argument is required
                 if ($opt === false and $index += 1)
                     return $this->parent->error("Missing argument {$index} for " .
-                        "{$_method}({$_args})");
+                        "{$function}({$_args})");
                 // Use default value
                 else $value = $opt;
             }
@@ -148,7 +148,7 @@ class RESTResource {
             // Fail if invalid argument option was passed
             if ($value and $reqs and !in_array($value, $reqs) and $index += 1)
                 return $this->parent->error("Invalid argument option {$index} for " .
-                    "{$_method}({$_args})");
+                    "{$function}({$_args})");
 
             // Replace argument tag with value
             if (strstr($resource, "{{$arg}}"))
