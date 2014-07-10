@@ -27,9 +27,24 @@ class RESTWrapper {
         $this->username = @$params['username'];
         $this->password = @$params['password'];
 
+        // Initialize global replacement vars
+        $replacements = array();
+        // Retrieve global replacement vars from definition
+        foreach ($definition as $index => $def)
+            if (!is_array($def)) $replacements[$index] = $def;
+
         // Create resource accessors
-        foreach ($definition as $res => $def)
-            $this->{$res} = new RESTResource($this, $res, $def);
+        foreach ($definition as $res => $def) {
+            if (is_array($def)) {
+                // Append global to definition if
+                foreach (array_keys($replacements) as $tag)
+                    if (!in_array($tag, array_keys($def)))
+                        $def[$tag] = $replacements[$tag];
+                    else foreach($replacements as $_tag => $value)
+                        $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
+                $this->{$res} = new RESTResource($this, $res, $def);
+            }
+        }
     }
 
     public function request($resource, $method = 'GET', $data = null) {
@@ -102,6 +117,25 @@ class RESTResource {
         $this->parent = $parent;
         $this->resource = $resource;
         $this->definition = $definition;
+
+        // Initialize replacement vars
+        $replacements = array();
+        // Retrieve replacement vars from definition
+        foreach ($definition as $index => $def)
+            if (!is_array($def)) $replacements[$index] = $def;
+        $this->replacements = $replacements;
+
+        // Create sub-resource accessors
+        foreach ($definition as $res => $def) {
+            if  (is_array($def) and !@$def[0]) {
+                foreach (array_keys($replacements) as $tag)
+                    if (!in_array($tag, array_keys($def)))
+                        $def[$tag] = $replacements[$tag];
+                    else foreach($replacements as $_tag => $value)
+                        $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
+                $this->{$res} = new RESTResource($parent, $res, $def);
+            }
+        }
     }
 
     public function __call($name, $arguments) {
@@ -112,7 +146,7 @@ class RESTResource {
         $function = "{$this->resource}::{$name}";
 
         // Fail if unable to retrieve method defintion
-        if (!$def = @$this->definition[$name] or !is_array($def) or count($def) < 2)
+        if (!$def = @$this->definition[$name] or !is_array($def) or count($def) < 2 or !@$def[0])
             return $this->error("Call to undefined method {$function}()");
 
         // Assign valid methods
@@ -125,20 +159,15 @@ class RESTResource {
         if (!$resource = $def[1])
             return $this->parent->error("Failed to load resource in {$function}()");
 
+        // Replace tags in resource string with var value
+        foreach ($this->replacements as $tag => $value)
+            $resource = str_replace("{{$tag}}", $value, $resource);
+
         // Initialize args if no additional were defined
         if (!$args = @$def[2]) $args = array();
 
         // Convert to array if single arg passed
         if ( ! is_array($args)) $args = array($args);
-
-        // Initialize replacement vars
-        $vars = array();
-        // Retrieve replacement vars from definition
-        foreach ($this->definition as $index => $def)
-            if (!is_array($def)) $vars[$index] = $def;
-        // Replace tags in resource string with var value
-        foreach ($vars as $tag => $value)
-            $resource = str_replace("{{$tag}}", "{$value}", $resource);
 
         // Parse args from URI tags
         preg_match_all('/{([^}]*)}/', $resource, $_args);
