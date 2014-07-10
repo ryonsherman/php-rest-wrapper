@@ -21,9 +21,11 @@
     },
     "User": {
         "root": "/contacts",
+        "states": "verified,unverified,all,deleted",
         "create": ["POST", "{root}.json", "data"],
         "view": ["GET", "{root}/{contact_id}.json"],
-        "list": ["GET", "{root}.json?query={query:}&state={state::verified,unverified,all,deleted}"],
+        "list": ["GET", "{root}.json?&state={state::{states}}"],
+        "filter": ["GET", "{root}.json?query={query}&state={state::{states}}"],
         "update": ["PUT", "{root}/{contact_id}.json", "data"],
         "delete": ["DELETE", "{root}/{contact_id}.json"]
     },
