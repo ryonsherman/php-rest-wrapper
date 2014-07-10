@@ -4,3 +4,7 @@ $config['url'] = '';
 $config['key'] = '';
 $config['username'] = '';
 $config['password'] = '';
+
+/* End of file example.php */
+/* Location: ./application/config/example.php */
+
