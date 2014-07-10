@@ -21,10 +21,9 @@
 
         "TimeEntry": {
             "root": "/helpdesk/time_sheets",
-            "root_ticket": "/helpdesk/tickets/{ticket_id}/time_sheets",
             "options": "customer_id,company_name,company_email,company_email,email,start_date,end_date,billable",
-            "create": ["POST", "{root_ticket}.json", "data"],
-            "view": ["GET", "{root_ticket}.json"],
+            "create": ["POST", "{root}/{ticket_id}/time_sheets.json", "data"],
+            "view": ["GET", "{root}/{ticket_id}/time_sheets.json"],
             "list": ["GET", "{root}.json?{filter::{options}}={value:}"],
             "filter": ["GET", "{root}.json?{filter:!:{options}}={value}"],
             "filterCustomer": ["GET", "{root}.json?customer_id={value}"],
@@ -35,13 +34,13 @@
             "filterStartTime": ["GET", "{root}.json?start_date={value}"],
             "filterEndTime": ["GET", "{root}.json?end_date={value}"],
             "filterBillable": ["GET", "{root}.json?billable={value}"],
-            "update": ["PUT", "{root_ticket}/{time_entry_id}.json", "data"],
+            "update": ["PUT", "{root}/{ticket_id}/time_sheets/{time_entry_id}.json", "data"],
             "toggleTimer": ["PUT", "{root}/{time_entry_id}/toggle_timer.json"],
-            "delete": ["DELETE", "{root_ticket}/{time_entry_id}.json"]
+            "delete": ["DELETE", "{root}/{ticket_id}/time_sheets/{time_entry_id}.json"]
         },
 
         "Survey": {
-            "root": "/helpdesk/tickets/{ticket_id}/surveys",
+            "root": "{root}/{ticket_id}/surveys",
             "create": ["POST", "{root}/rate.json?rating={rating}", "data"],
             "view": ["GET", "{root}.json"]
         }

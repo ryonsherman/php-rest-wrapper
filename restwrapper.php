@@ -33,17 +33,20 @@ class RESTWrapper {
         foreach ($definition as $index => $def)
             if (!is_array($def)) $replacements[$index] = $def;
 
-        // Create resource accessors
+        // Search for replacement values
         foreach ($definition as $res => $def) {
-            if (is_array($def)) {
-                // Append global to definition if
-                foreach (array_keys($replacements) as $tag)
-                    if (!in_array($tag, array_keys($def)))
-                        $def[$tag] = $replacements[$tag];
-                    else foreach($replacements as $_tag => $value)
-                        $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
-                $this->{$res} = new RESTResource($this, $res, $def);
-            }
+            // Continue if not replacement value
+            if (!is_array($def) or @$def[0]) continue;
+            // Iterate globals
+            foreach (array_keys($replacements) as $tag)
+                // Append replacement if tag doesnt exist in child def
+                if (!in_array($tag, array_keys($def)))
+                    $def[$tag] = $replacements[$tag];
+                // Apply replacements to child replacement values
+                else foreach($replacements as $_tag => $value)
+                    $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
+            // Create resource accessor
+            $this->{$res} = new RESTResource($this, $res, $def);
         }
     }
 
@@ -125,16 +128,20 @@ class RESTResource {
             if (!is_array($def)) $replacements[$index] = $def;
         $this->replacements = $replacements;
 
-        // Create sub-resource accessors
+        // Search for replacement values
         foreach ($definition as $res => $def) {
-            if  (is_array($def) and !@$def[0]) {
-                foreach (array_keys($replacements) as $tag)
-                    if (!in_array($tag, array_keys($def)))
-                        $def[$tag] = $replacements[$tag];
-                    else foreach($replacements as $_tag => $value)
-                        $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
-                $this->{$res} = new RESTResource($parent, $res, $def);
-            }
+            // Continue if not replacement value
+            if (!is_array($def) or @$def[0]) continue;
+            // Iterate globals
+            foreach (array_keys($replacements) as $tag)
+                // Append replacement if tag doesnt exist in child def
+                if (!in_array($tag, array_keys($def)))
+                    $def[$tag] = $replacements[$tag];
+                // Apply replacements to child replacement values
+                else foreach($replacements as $_tag => $value)
+                    $def[$tag] = str_replace("{{$_tag}}", $value, $def[$tag]);
+            // Create resource accessor
+            $this->{$res} = new RESTResource($this, $res, $def);
         }
     }
 
@@ -143,6 +150,7 @@ class RESTResource {
         $data = array();
 
         // Get function name
+        # TODO: Append parent resource name to preserve inheritance
         $function = "{$this->resource}::{$name}";
 
         // Fail if unable to retrieve method defintion
