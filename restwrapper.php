@@ -35,7 +35,7 @@ class RESTWrapper {
 
         // Search for replacement values
         foreach ($definition as $res => $def) {
-            // Continue if not replacement value
+            // Continue if not sub-definition
             if (!is_array($def) or @$def[0]) continue;
             // Iterate globals
             foreach (array_keys($replacements) as $tag)
@@ -130,7 +130,7 @@ class RESTResource {
 
         // Search for replacement values
         foreach ($definition as $res => $def) {
-            // Continue if not replacement value
+            // Continue if not sub-definition
             if (!is_array($def) or @$def[0]) continue;
             // Iterate globals
             foreach (array_keys($replacements) as $tag)
