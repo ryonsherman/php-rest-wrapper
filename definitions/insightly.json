@@ -50,7 +50,7 @@
         "delete": [ "DELETE", "{root}/{id}" ]
     },
     "FileAttachments": {
-        "root": "/FileAttachments"
+        "root": "/FileAttachments",
         "get": [ "GET", "{root}/{id}" ]
     },
     "FileCategories": {
