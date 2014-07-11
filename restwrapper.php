@@ -75,7 +75,7 @@ class RESTWrapper {
         // Set POST data if passed
         if ($data and $data = json_encode($data)) curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
-        // Build curl command for debug output
+        // Build curl command for log output
         $command = "curl";
         if ($this->username) $command .= " -u '{$credentials}'";
         foreach ($headers as $header) $command .= " -H '{$header}'";
@@ -134,7 +134,7 @@ class RESTResource {
             if (!is_array($def) or @$def[0]) continue;
             // Iterate globals
             foreach (array_keys($replacements) as $tag)
-                // Append replacement if tag doesnt exist in child def
+                // Append replacement if tag doesnt exist in child
                 if (!in_array($tag, array_keys($def)))
                     $def[$tag] = $replacements[$tag];
                 // Apply replacements to child replacement values
