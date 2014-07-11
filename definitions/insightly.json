@@ -11,7 +11,7 @@
         "list": [ "GET", "{root}?ids={ids:}&email={email:}&tag={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "contact" ],
-        "update": [ "PUT", "{root}", "contact" ],
+        "update": [ "PUT", "{root}", "contact" ],
         "delete": [ "DELETE", "{root}/{id}" ],
         "getEmail": [ "GET", "{root}/{c_id}/Emails" ],
         "getNotes": [ "GET", "{root}/{c_id}/Notes" ],
