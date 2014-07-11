@@ -8,7 +8,7 @@
     },
     "Contacts": {
         "root": "/Contacts",
-        "list": [ "GET", "{root}?ids={ids:}&email={email:}&tag={tag:}" ],
+        "list": [ "GET", "{root}?ids:={ids:}&email:={email:}&tag:={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "contact" ],
         "update": [ "PUT", "{root}", "contact" ],
@@ -35,7 +35,8 @@
         "get": [ "GET", "{root}/{id}" ]
     },
     "Emails": {
-        "root": "/Emails", "list": [ "GET", "{root}?ids={ids}&tag={tag}" ],
+        "root": "/Emails", 
+        "list": [ "GET", "{root}?ids:={ids:}&tag:={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "delete": [ "DELETE", "{root}/{id}" ],
         "comments": [ "GET", "{root}/{c_id}/Comments" ],
@@ -73,7 +74,7 @@
     },
     "Opportunities": {
         "root": "/Opportunities",
-        "list": [ "GET", "{root}?ids={ids}&tag={tag}" ],
+        "list": [ "GET", "{root}?ids:={ids:}&tag:={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "opportunity" ],
         "update": [ "PUT", "{root}", "opportunity" ],
@@ -101,7 +102,7 @@
     },
     "Organisations": {
         "root": "/Organisations",
-        "list": [ "GET", "{root}?ids={ids:}&domain={domain:}&tag={tag:}" ],
+        "list": [ "GET", "{root}?ids:={ids:}&domain:={domain:}&tag:={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "organisation" ],
         "update": [ "PUT", "{root}", "organisation" ],
@@ -134,7 +135,7 @@
     },
     "Projects": {
         "root": "/Projects",
-        "list": [ "GET", "/{root}?ids={ids:}&tag={tag:}" ],
+        "list": [ "GET", "/{root}?ids:={ids:}&tag:={tag:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "project"],
         "update": [ "PUT", "{root}", "project"],
@@ -165,7 +166,7 @@
     },
     "Tasks": {
         "root": "/Tasks",
-        "list": [ "GET", "{root}?ids={id:}" ],
+        "list": [ "GET", "{root}?ids:={id:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "task" ],
         "update": [ "PUT", "{root}", "task" ],
@@ -175,7 +176,7 @@
     },
     "TeamMembers": {
         "root": "/TeamMembers",
-        "list": [ "GET", "{root}?teamid={teamid}" ],
+        "list": [ "GET", "{root}?teamid:={teamid:}" ],
         "get": [ "GET", "{root}/{id}" ],
         "add": [ "POST", "{root}", "team_member" ],
         "update": [ "PUT", "{root}", "team_member" ],
