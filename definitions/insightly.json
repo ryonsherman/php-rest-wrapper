@@ -1,198 +1,237 @@
 {
-    "Comments": {
+    "_TODO": "Implement defintition meta data like so:",
+    "_author": "",
+    "_url": "",
+
+    "Comment": {
         "root": "/Comments",
-        "get": [ "GET", "{root}/{id}" ],
-        "attachFile": [ "POST", "{root}?c_id={c_id}&filename={filename}", "file" ],
-        "update": [ "PUT", "{root}", "comment" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "get": ["GET", "{root}/{comment_id}"],
+        "update": ["PUT", "{root}", "data"],
+        "delete": ["DELETE", "{root}/{comment_id}"],
+        "attachFile": ["POST", "{root}?c_id={comment_id}&filename={filename}", "data"]
     },
-    "Contacts": {
+
+    "Contact": {
         "root": "/Contacts",
-        "list": [ "GET", "{root}?ids={ids:}&email={email:}&tag={tag:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "contact" ],
-        "update": [ "PUT", "{root}", "contact" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "getEmail": [ "GET", "{root}/{c_id}/Emails" ],
-        "getNotes": [ "GET", "{root}/{c_id}/Notes" ],
-        "getTasks": [ "GET", "{root}/{c_id}/Tasks" ],
-        "getImage": [ "GET", "{root}/{c_id}/Image" ],
-        "addImage": [ "POST", "{root}/{c_id}/Image/{filename}", "image" ],
-        "updateImage": [ "PUT", "{root}/{c_id}/Image/{filename}", "image" ],
-        "deleteImage": [ "DELETE", "{root}/{c_id}/Image" ]
+
+        "list": ["GET", "{root}?ids={ids:}&email={email:}&tag={tag:}"],
+        "get": ["GET", "{root}/{id}"],
+        "getEmail": ["GET", "{root}/{contact_id}/Emails"],
+        "getNotes": ["GET", "{root}/{contact_id}/Notes"],
+        "getTasks": ["GET", "{root}/{contact_id}/Tasks"],
+        "getImage": ["GET", "{root}/{contact_id}/Image"],
+        "add": ["POST", "{root}", "data"],
+        "addImage": ["POST", "{root}/{contact_id}/Image/{filename}", "data"],
+        "update": ["PUT", "{root}", "data"],
+        "updateImage": ["PUT", "{root}/{contact_id}/Image/{filename}", "data"],
+        "delete": ["DELETE", "{root}/{id}"],
+        "deleteImage": ["DELETE", "{root}/{contact_id}/Image"]
     },
-    "Countries": {
-        "root": "/Countries",
-        "get": [ "GET", "{root}"]
+
+    "Country": {
+        "list": ["GET", "/Countries"]
     },
-    "Currencies": {
-        "root": "/Currencies",
-        "get": [ "GET", "{root}" ]
+
+    "Currency": {
+        "list": ["GET", "/Currencies"]
     },
-    "CustomFields": {
+
+    "CustomField": {
         "root": "/CustomFields",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{custom_field_id}"]
     },
-    "Emails": {
+
+    "Email": {
         "root": "/Emails",
-        "list": [ "GET", "{root}?ids={ids:}&tag={tag:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "comments": [ "GET", "{root}/{c_id}/Comments" ],
-        "post_comment": [ "POST", "{root}/{c_id}/Comments", "comment" ]
+
+        "list": ["GET", "{root}?ids={ids:}&tag={tag:}"],
+        "get": ["GET", "{root}/{id}"],
+        "delete": ["DELETE", "{root}/{id}"],
+
+        "comments": ["GET", "{root}/{c_id}/Comments"],
+        "post_comment": ["POST", "{root}/{c_id}/Comments", "data"]
     },
+
     "Events": {
         "root": "/Events",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "event" ],
-        "update": [ "PUT", "{root}", "event" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{event_id}"],
+        "add": ["POST", "{root}", "data"],
+        "update": ["PUT", "{root}", "data"],
+        "delete": ["DELETE", "{root}/{event_id}"]
     },
-    "FileAttachments": {
-        "root": "/FileAttachments",
-        "get": [ "GET", "{root}/{id}" ]
+
+    "File": {
+        "_TODO": "Move File::Attachment::get() to File::getAttachment()",
+        "Attachment": {
+            "get": ["GET", "/FileAttachments/{file_attachment_id}"]
+        },
+
+        "Category": {
+            "root": "/FileCategories",
+
+            "list": ["GET", "{root}"],
+            "get": ["GET", "{root}/{file_category_id}"],
+            "add": ["POST", "{root}", "data"],
+            "update": ["PUT", "{root}", "data"],
+            "delete": ["DELETE", "{root}/{file_category_id}"]
+        }
     },
-    "FileCategories": {
-        "root": "/FileCategories",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "file_category" ],
-        "update": [ "PUT", "{root}", "file_category" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
-    },
-    "Notes": {
-        "root": "/Notes",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "note" ],
-        "update": [ "PUT", "{root}", "note" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "get_comments": [ "GET", "{root}/{c_id}/Comments" ],
-        "add_comment": [ "POST", "{root}/{c_id}/", "note_comment" ]
-    },
-    "Opportunities": {
+
+    "Opportunity": {
         "root": "/Opportunities",
-        "list": [ "GET", "{root}?ids={ids:}&tag={tag:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "opportunity" ],
-        "update": [ "PUT", "{root}", "opportunity" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "state_history": [ "GET", "{root}/{c_id}/StateHistory" ],
-        "emails": [ "GET", "{root}/{c_id}/Emails" ],
-        "notes": [ "GET", "{root}/{c_id}/Notes" ],
-        "tasks": [ "GET", "{root}/{c_id}/Tasks" ],
-        "image": [ "GET", "{root}/{c_id}/Image" ],
-        "add_image": [ "POST", "{root}/{c_id}/Image/{filename}", "image" ],
-        "update_image": [ "PUT", "{root}/{c_id}/Image/{filename}", "image" ],
-        "delete_image": [ "DELETE", "{root}/{c_id}/Image" ]
+
+        "_TODO": "revisit these method names",
+        "list": ["GET", "{root}?ids={ids:}&tag={tag:}"],
+        "get": ["GET", "{root}/{opportunity_id}"],
+        "add": ["POST", "{root}", "data"],
+        "update": ["PUT", "{root}", "data"],
+        "delete": ["DELETE", "{root}/{id}"],
+        "getStateHistory": ["GET", "{root}/{opportunity_id}/StateHistory"],
+        "getEmails": ["GET", "{root}/{opportunity_id}/Emails"],
+        "getNotes": ["GET", "{root}/{opportunity_id}/Notes"],
+        "getTasks": ["GET", "{root}/{opportunity_id}/Tasks"],
+        "getImage": ["GET", "{root}/{opportunity_id}/Image"],
+        "addImage": ["POST", "{root}/{opportunity_id}/Image/{filename}", "data"],
+        "updateImage": ["PUT", "{root}/{opportunity_id}/Image/{filename}", "data"],
+        "deleteImage": ["DELETE", "{root}/{opportunity_id}/Image"],
+
+        "_TODO": "Move Opportunity::StateReasons::list() to Opportunity::getStateReasons()",
+        "StateReasons": {
+            "list": ["GET", "/OpportunityStateReasons"]
+        },
+
+        "Category": {
+            "root": "/OpportunityCategories",
+
+            "list": ["GET", "{root}"],
+            "get": ["GET", "{root}/{opportunity_category_id}"],
+            "add": ["POST", "{root}", "data"],
+            "update": ["PUT", "{root}", "data"],
+            "delete": ["DELETE", "{root}/{opportunity_category_id}"]
+        }
     },
-    "OpportunityCategories": {
-        "root": "/OpportunityCategories",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "opportunity_category" ],
-        "update": [ "PUT", "{root}", "opportunity_category" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
-    },
-    "OpportunityStateReasons": {
-        "root": "/OpportunityStateReasons",
-        "list": [ "GET", "{root}" ]
-    },
+
+    "_TODO": "Unevaluated below this point",
+
     "Organisations": {
         "root": "/Organisations",
-        "list": [ "GET", "{root}?ids={ids:}&domain={domain:}&tag={tag:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "organisation" ],
-        "update": [ "PUT", "{root}", "organisation" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "emails": [ "GET", "{root}/{c_id}/Emails" ],
-        "notes": [ "GET", "{root}/{c_id}/Notes" ],
-        "tasks": [ "GET", "{root}/{c_id}/Tasks" ],
-        "get_image": [ "GET", "{root}/{c_id}/Image" ],
-        "add_image": [ "POST", "{root}/{c_id}/Image/{filename}", "image" ],
-        "update_image": [ "PUT", "{root}/{c_id}/Image/{filename}", "image" ],
-        "delete_image": [ "DELETE", "{root}/{c_id}/Image" ]
+
+        "list": ["GET", "{root}?ids={ids:}&domain={domain:}&tag={tag:}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "organisation"],
+        "update": ["PUT", "{root}", "organisation"],
+        "delete": ["DELETE", "{root}/{id}"],
+        "emails": ["GET", "{root}/{c_id}/Emails"],
+        "notes": ["GET", "{root}/{c_id}/Notes"],
+        "tasks": ["GET", "{root}/{c_id}/Tasks"],
+        "get_image": ["GET", "{root}/{c_id}/Image"],
+        "add_image": ["POST", "{root}/{c_id}/Image/{filename}", "image"],
+        "update_image": ["PUT", "{root}/{c_id}/Image/{filename}", "image"],
+        "delete_image": ["DELETE", "{root}/{c_id}/Image"]
     },
+
     "Pipelines": {
         "root": "/Pipelines",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"]
     },
+
     "PipelineStages": {
         "root": "/PipelineStages",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"]
     },
+
     "ProjectCategories": {
         "root": "/ProjectCategories",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "project_category" ],
-        "update": [ "PUT", "{root}", "project_category" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "project_category"],
+        "update": ["PUT", "{root}", "project_category"],
+        "delete": ["DELETE", "{root}/{id}"]
     },
+
     "Projects": {
         "root": "/Projects",
-        "list": [ "GET", "/{root}?ids={ids:}&tag={tag:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "project"],
-        "update": [ "PUT", "{root}", "project"],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "emails": [ "GET", "{root}/{c_id}/Emails" ],
-        "notes": [ "GET", "{root}/{c_id}/Notes" ],
-        "tasks": [ "GET", "{root}/{c_id}/Tasks" ],
-        "get_image": [ "GET", "{root}/{c_id}/Image" ],
-        "add_image": [ "POST", "{root}/{c_id}/Image/{filename}", "image" ],
-        "update_image": [ "PUT", "{root}/{c_id}/Image/{filename}", "image" ],
-        "delete_image": [ "DELETE", "{root}/{c_id}/Image" ]
+
+        "list": ["GET", "/{root}?ids={ids:}&tag={tag:}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "project"],
+        "update": ["PUT", "{root}", "project"],
+        "delete": ["DELETE", "{root}/{id}"],
+        "emails": ["GET", "{root}/{c_id}/Emails"],
+        "notes": ["GET", "{root}/{c_id}/Notes"],
+        "tasks": ["GET", "{root}/{c_id}/Tasks"],
+        "get_image": ["GET", "{root}/{c_id}/Image"],
+        "add_image": ["POST", "{root}/{c_id}/Image/{filename}", "image"],
+        "update_image": ["PUT", "{root}/{c_id}/Image/{filename}", "image"],
+        "delete_image": ["DELETE", "{root}/{c_id}/Image"]
     },
+
     "Relationships": {
         "root": "/Relationships",
-        "list": [ "GET", "{root}" ]
+        "list": ["GET", "{root}"]
     },
+
     "Tags": {
         "root":"/Tags",
-        "list": [ "GET", "{root}/{id}" ]
+        "list": ["GET", "{root}/{id}"]
     },
+
     "TaskCategories": {
         "root": "/TaskCategories",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "task_category" ],
-        "update": [ "PUT", "{root}", "task_category" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "task_category"],
+        "update": ["PUT", "{root}", "task_category"],
+        "delete": ["DELETE", "{root}/{id}"]
     },
+
     "Tasks": {
         "root": "/Tasks",
-        "list": [ "GET", "{root}?ids={id:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "task" ],
-        "update": [ "PUT", "{root}", "task" ],
-        "delete": [ "DELETE", "{root}/{id}" ],
-        "get_comments": [ "GET", "{root}/{c_id}/Comments" ],
-        "add_comment": [ "POST", "{root}/{c_id}/Comments", "task_comment" ]
+
+        "list": ["GET", "{root}?ids={id:}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "task"],
+        "update": ["PUT", "{root}", "task"],
+        "delete": ["DELETE", "{root}/{id}"],
+        "get_comments": ["GET", "{root}/{c_id}/Comments"],
+        "add_comment": ["POST", "{root}/{c_id}/Comments", "task_comment"]
     },
+
     "TeamMembers": {
         "root": "/TeamMembers",
-        "list": [ "GET", "{root}?teamid={teamid:}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "team_member" ],
-        "update": [ "PUT", "{root}", "team_member" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "list": ["GET", "{root}?teamid={teamid:}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "team_member"],
+        "update": ["PUT", "{root}", "team_member"],
+        "delete": ["DELETE", "{root}/{id}"]
     },
+
     "Teams": {
         "root": "/Teams",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ],
-        "add": [ "POST", "{root}", "team" ],
-        "update": [ "PUT", "{root}", "team" ],
-        "delete": [ "DELETE", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"],
+        "add": ["POST", "{root}", "team"],
+        "update": ["PUT", "{root}", "team"],
+        "delete": ["DELETE", "{root}/{id}"]
     },
+
     "Users": {
         "root": "/Users",
-        "list": [ "GET", "{root}" ],
-        "get": [ "GET", "{root}/{id}" ]
+
+        "list": ["GET", "{root}"],
+        "get": ["GET", "{root}/{id}"]
     }
 }
