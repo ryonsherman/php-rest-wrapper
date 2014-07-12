@@ -3,7 +3,7 @@
         "root": "/helpdesk/tickets",
         "options": "all_tickets,new_my_open,monitored_by,spam,deleted",
         "create": ["POST", "{root}.json", "data"],
-        "view": ["GET", "{root}/{ticket_id}.json"],
+        "get": ["GET", "{root}/{ticket_id}.json"],
         "list": ["GET", "{root}.json?filter_name={filter:all_tickets:{options}}"],
         "filter": ["GET", "{root}/filter/{filter:!:{options}}?format=json"],
         "filterView": ["GET", "{root}/view/{view_id}?format=json"],
@@ -23,7 +23,7 @@
             "root": "/helpdesk/time_sheets",
             "options": "customer_id,company_name,company_email,company_email,email,start_date,end_date,billable",
             "create": ["POST", "{root}/{ticket_id}/time_sheets.json", "data"],
-            "view": ["GET", "{root}/{ticket_id}/time_sheets.json"],
+            "get": ["GET", "{root}/{ticket_id}/time_sheets.json"],
             "list": ["GET", "{root}.json?{filter::{options}}={value:}"],
             "filter": ["GET", "{root}.json?{filter:!:{options}}={value}"],
             "filterCustomer": ["GET", "{root}.json?customer_id={customer_id}"],
@@ -42,7 +42,7 @@
         "Survey": {
             "root": "{root}/{ticket_id}/surveys",
             "create": ["POST", "{root}/rate.json?rating={rating}", "data"],
-            "view": ["GET", "{root}.json"]
+            "get": ["GET", "{root}.json"]
         }
     },
 
@@ -50,7 +50,7 @@
         "root": "/customers",
         "create": ["POST", "{root}.json", "data"],
         "update": ["PUT", "{root}/{customer_id}.json", "data"],
-        "view": ["GET", "{root}/{customer_id}.json"],
+        "get": ["GET", "{root}/{customer_id}.json"],
         "list": ["GET", "{root}.json?letter={name:}"],
         "delete": ["DELETE", "{root}/{customer_id}.json"]
     },
@@ -59,7 +59,7 @@
         "root": "/contacts",
         "states": "verified,unverified,all,deleted",
         "create": ["POST", "{root}.json", "data"],
-        "view": ["GET", "{root}/{contact_id}.json"],
+        "get": ["GET", "{root}/{contact_id}.json"],
         "list": ["GET", "{root}.json?&state={state::{states}}"],
         "filter": ["GET", "{root}.json?query={query}&state={state::{states}}"],
         "update": ["PUT", "{root}/{contact_id}.json", "data"],
@@ -70,7 +70,7 @@
         "root": "/groups",
         "create": ["POST", "{root}.json", "data"],
         "update": ["PUT", "{root}/{group_id}.json", "data"],
-        "view": ["GET", "{root}/{group_id}"],
+        "get": ["GET", "{root}/{group_id}"],
         "list": ["GET", "{root}.json"],
         "delete": ["DELETE", "{root}/{group_id}.json"]
     },
@@ -79,14 +79,14 @@
         "root": "/categories/{category_id}/forums",
         "create": ["POST", "{root}.json", "data"],
         "update": ["PUT", "{root}/{forum_id}.json", "data"],
-        "view": ["GET", "{root}/{forum_id}.json"],
+        "get": ["GET", "{root}/{forum_id}.json"],
         "delete": ["DELETE", "{root}/{forum_id}.json"],
 
         "Category": {
             "root": "/categories",
             "create": ["POST", "{root}.json", "data"],
             "update": ["PUT", "{root}/{category_id}.json", "data"],
-            "view": ["GET", "{root}/{category_id}.json"],
+            "get": ["GET", "{root}/{category_id}.json"],
             "list": ["GET", "{root}.json"],
             "delete": ["DELETE", "{root}/{category_id}.json"]
         },
@@ -95,7 +95,7 @@
             "root": "/categories/{category_id}/forums/{forum_id}/topics",
             "create": ["POST", "{root}.json", "data"],
             "update": ["PUT", "{root}/{topic_id}.json", "data"],
-            "view": ["GET", "{root}/{topic_id}.json"],
+            "get": ["GET", "{root}/{topic_id}.json"],
             "delete": ["DELETE", "{root}/{topic_id}.json"]
         },
 
@@ -121,7 +121,7 @@
         "Category": {
             "create": ["POST", "{root}.json", "data"],
             "update": ["PUT", "{root}/{category_id}.json", "data"],
-            "view": ["GET", "{root}/{category_id}"],
+            "get": ["GET", "{root}/{category_id}"],
             "list": ["GET", "{root}.json"],
             "delete": ["DELETE", "{root}/{category_id}.json"]
         },
@@ -130,7 +130,7 @@
             "root": "{root}/{category_id}/folders",
             "create": ["POST", "{root}.json", "data"],
             "update": ["PUT", "{root}/{folder_id}.json", "data"],
-            "view": ["GET", "{root}/{folder_id}.json"],
+            "get": ["GET", "{root}/{folder_id}.json"],
             "delete": ["DELETE", "{root}/{folder_id}.json"]
         },
 
@@ -138,7 +138,7 @@
             "root": "{root}/{category_id}/folders/{folder_id}",
             "create": ["POST", "{root}/articles.json?tags={tags:}", "data"],
             "update": ["PUT", "{root}/articles/{article_id}.json?tags={tags:}", "data"],
-            "view": ["GET", "{root}/articles/{article_id}.json"],
+            "get": ["GET", "{root}/articles/{article_id}.json"],
             "list": ["GET", "{root}.json"],
             "delete": ["DELETE", "{root}/articles/{article_id}.json"]
         }
