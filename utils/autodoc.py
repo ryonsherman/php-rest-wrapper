@@ -66,12 +66,12 @@ def process(definition, outfile, **kwargs):
         return ''.join(c for c in title if c.isalnum()).lower()
 
     # output resource header if not root
-    if parent: outfile.write("\n## {}\n\n".format(
+    if parent: outfile.write("## {}\n\n".format(
         '<a name="{}"></a>{}'.format(anchor(parent), parent)))
 
     # helper to return a list linked to anchors
     def linked_list(title, items):
-        outfile.write("#### {}:\n\n{}\n".format(title,
+        outfile.write("#### {}:\n\n{}\n\n".format(title,
             "\n".join(map(lambda x: "* [{}](#{})".format(x,
                 anchor("{}{}".format(parent, x) if parent else x)),
             items.keys()))))
@@ -161,7 +161,7 @@ def process(definition, outfile, **kwargs):
         curl += "'{}'".format(url)
 
         # output to file
-        outfile.write(template.format(**locals()))
+        outfile.write("{}\n".format(template.format(**locals())))
 
     # iterate sub-definitions
     for res, subdef in subdefs.iteritems():

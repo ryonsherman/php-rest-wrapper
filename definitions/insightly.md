@@ -32,6 +32,7 @@
 
 * [list](#relationshipslist)
 
+
 ### <a name="relationshipslist"></a>Relationships::list()
 
 ```php
@@ -56,6 +57,7 @@ Relationships->list();
 * [update](#taskcategoriesupdate)
 * [get](#taskcategoriesget)
 
+
 ### <a name="taskcategoriesadd"></a>TaskCategories::add()
 
 ```php
@@ -73,6 +75,7 @@ TaskCategories->add(task_category);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="taskcategoriesdelete"></a>TaskCategories::delete()
 
@@ -92,6 +95,7 @@ TaskCategories->delete(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{id}'`
 
+
 ### <a name="taskcategorieslist"></a>TaskCategories::list()
 
 ```php
@@ -105,6 +109,7 @@ TaskCategories->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="taskcategoriesupdate"></a>TaskCategories::update()
 
@@ -123,6 +128,7 @@ TaskCategories->update(task_category);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="taskcategoriesget"></a>TaskCategories::get()
 
@@ -154,6 +160,7 @@ TaskCategories->get(id);
 * [get_comments](#tasksgetcomments)
 * [delete](#tasksdelete)
 
+
 ### <a name="tasksaddcomment"></a>Tasks::add_comment()
 
 ```php
@@ -173,6 +180,7 @@ Tasks->add_comment(c_id, task_comment);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{c_id}/Comments'`
 
+
 ### <a name="tasksget"></a>Tasks::get()
 
 ```php
@@ -190,6 +198,7 @@ Tasks->get(id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{id}'`
+
 
 ### <a name="taskslist"></a>Tasks::list()
 
@@ -209,6 +218,7 @@ Tasks->list([id]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?ids={id:}'`
 
+
 ### <a name="tasksupdate"></a>Tasks::update()
 
 ```php
@@ -226,6 +236,7 @@ Tasks->update(task);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="tasksadd"></a>Tasks::add()
 
@@ -245,6 +256,7 @@ Tasks->add(task);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
 
+
 ### <a name="tasksgetcomments"></a>Tasks::get_comments()
 
 ```php
@@ -262,6 +274,7 @@ Tasks->get_comments(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Comments'`
+
 
 ### <a name="tasksdelete"></a>Tasks::delete()
 
@@ -288,6 +301,7 @@ Tasks->delete(id);
 * [list](#pipelineslist)
 * [get](#pipelinesget)
 
+
 ### <a name="pipelineslist"></a>Pipelines::list()
 
 ```php
@@ -301,6 +315,7 @@ Pipelines->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="pipelinesget"></a>Pipelines::get()
 
@@ -327,6 +342,7 @@ Pipelines->get(id);
 * [list](#userslist)
 * [get](#usersget)
 
+
 ### <a name="userslist"></a>Users::list()
 
 ```php
@@ -340,6 +356,7 @@ Users->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="usersget"></a>Users::get()
 
@@ -365,6 +382,7 @@ Users->get(id);
 
 * [list](#tagslist)
 
+
 ### <a name="tagslist"></a>Tags::list()
 
 ```php
@@ -388,6 +406,7 @@ Tags->list(id);
 #### Methods:
 
 * [list](#countrylist)
+
 
 ### <a name="countrylist"></a>Country::list()
 
@@ -420,6 +439,7 @@ Country->list();
 * [emails](#organisationsemails)
 * [delete](#organisationsdelete)
 
+
 ### <a name="organisationsaddimage"></a>Organisations::add_image()
 
 ```php
@@ -440,6 +460,7 @@ Organisations->add_image(c_id, filename, image);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{c_id}/Image/{filename}'`
 
+
 ### <a name="organisationstasks"></a>Organisations::tasks()
 
 ```php
@@ -457,6 +478,7 @@ Organisations->tasks(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Tasks'`
+
 
 ### <a name="organisationsget"></a>Organisations::get()
 
@@ -476,6 +498,7 @@ Organisations->get(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{id}'`
 
+
 ### <a name="organisationsnotes"></a>Organisations::notes()
 
 ```php
@@ -493,6 +516,7 @@ Organisations->notes(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Notes'`
+
 
 ### <a name="organisationslist"></a>Organisations::list()
 
@@ -514,6 +538,7 @@ Organisations->list([ids][, domain][, tag]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?ids={ids:}&domain={domain:}&tag={tag:}'`
 
+
 ### <a name="organisationsupdate"></a>Organisations::update()
 
 ```php
@@ -531,6 +556,7 @@ Organisations->update(organisation);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="organisationsdeleteimage"></a>Organisations::delete_image()
 
@@ -550,6 +576,7 @@ Organisations->delete_image(c_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{c_id}/Image'`
 
+
 ### <a name="organisationsadd"></a>Organisations::add()
 
 ```php
@@ -568,6 +595,7 @@ Organisations->add(organisation);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
 
+
 ### <a name="organisationsgetimage"></a>Organisations::get_image()
 
 ```php
@@ -585,6 +613,7 @@ Organisations->get_image(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Image'`
+
 
 ### <a name="organisationsupdateimage"></a>Organisations::update_image()
 
@@ -606,6 +635,7 @@ Organisations->update_image(c_id, filename, image);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships/{c_id}/Image/{filename}'`
 
+
 ### <a name="organisationsemails"></a>Organisations::emails()
 
 ```php
@@ -623,6 +653,7 @@ Organisations->emails(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Emails'`
+
 
 ### <a name="organisationsdelete"></a>Organisations::delete()
 
@@ -652,6 +683,7 @@ Organisations->delete(id);
 * [update](#projectcategoriesupdate)
 * [get](#projectcategoriesget)
 
+
 ### <a name="projectcategoriesadd"></a>ProjectCategories::add()
 
 ```php
@@ -669,6 +701,7 @@ ProjectCategories->add(project_category);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="projectcategoriesdelete"></a>ProjectCategories::delete()
 
@@ -688,6 +721,7 @@ ProjectCategories->delete(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{id}'`
 
+
 ### <a name="projectcategorieslist"></a>ProjectCategories::list()
 
 ```php
@@ -701,6 +735,7 @@ ProjectCategories->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="projectcategoriesupdate"></a>ProjectCategories::update()
 
@@ -719,6 +754,7 @@ ProjectCategories->update(project_category);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="projectcategoriesget"></a>ProjectCategories::get()
 
@@ -748,6 +784,7 @@ ProjectCategories->get(id);
 * [comments](#emailcomments)
 * [get](#emailget)
 
+
 ### <a name="emaillist"></a>Email::list()
 
 ```php
@@ -767,6 +804,7 @@ Email->list([ids][, tag]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?ids={ids:}&tag={tag:}'`
 
+
 ### <a name="emaildelete"></a>Email::delete()
 
 ```php
@@ -784,6 +822,7 @@ Email->delete(id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{id}'`
+
 
 ### <a name="emailpostcomment"></a>Email::post_comment()
 
@@ -804,6 +843,7 @@ Email->post_comment(c_id, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{c_id}/Comments'`
 
+
 ### <a name="emailcomments"></a>Email::comments()
 
 ```php
@@ -821,6 +861,7 @@ Email->comments(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Comments'`
+
 
 ### <a name="emailget"></a>Email::get()
 
@@ -846,6 +887,7 @@ Email->get(id);
 
 * [list](#currencylist)
 
+
 ### <a name="currencylist"></a>Currency::list()
 
 ```php
@@ -870,6 +912,7 @@ Currency->list();
 * [update](#teamsupdate)
 * [get](#teamsget)
 
+
 ### <a name="teamsadd"></a>Teams::add()
 
 ```php
@@ -887,6 +930,7 @@ Teams->add(team);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="teamsdelete"></a>Teams::delete()
 
@@ -906,6 +950,7 @@ Teams->delete(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{id}'`
 
+
 ### <a name="teamslist"></a>Teams::list()
 
 ```php
@@ -919,6 +964,7 @@ Teams->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="teamsupdate"></a>Teams::update()
 
@@ -937,6 +983,7 @@ Teams->update(team);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="teamsget"></a>Teams::get()
 
@@ -973,6 +1020,7 @@ Teams->get(id);
 * [deleteImage](#contactdeleteimage)
 * [delete](#contactdelete)
 
+
 ### <a name="contactgettasks"></a>Contact::getTasks()
 
 ```php
@@ -990,6 +1038,7 @@ Contact->getTasks(contact_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{contact_id}/Tasks'`
+
 
 ### <a name="contactgetnotes"></a>Contact::getNotes()
 
@@ -1009,6 +1058,7 @@ Contact->getNotes(contact_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{contact_id}/Notes'`
 
+
 ### <a name="contactgetemail"></a>Contact::getEmail()
 
 ```php
@@ -1027,6 +1077,7 @@ Contact->getEmail(contact_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{contact_id}/Emails'`
 
+
 ### <a name="contactget"></a>Contact::get()
 
 ```php
@@ -1044,6 +1095,7 @@ Contact->get(id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{id}'`
+
 
 ### <a name="contactlist"></a>Contact::list()
 
@@ -1065,6 +1117,7 @@ Contact->list([ids][, email][, tag]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?ids={ids:}&email={email:}&tag={tag:}'`
 
+
 ### <a name="contactupdate"></a>Contact::update()
 
 ```php
@@ -1082,6 +1135,7 @@ Contact->update(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="contactaddimage"></a>Contact::addImage()
 
@@ -1103,6 +1157,7 @@ Contact->addImage(contact_id, filename, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{contact_id}/Image/{filename}'`
 
+
 ### <a name="contactadd"></a>Contact::add()
 
 ```php
@@ -1120,6 +1175,7 @@ Contact->add(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="contactupdateimage"></a>Contact::updateImage()
 
@@ -1141,6 +1197,7 @@ Contact->updateImage(contact_id, filename, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships/{contact_id}/Image/{filename}'`
 
+
 ### <a name="contactgetimage"></a>Contact::getImage()
 
 ```php
@@ -1159,6 +1216,7 @@ Contact->getImage(contact_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{contact_id}/Image'`
 
+
 ### <a name="contactdeleteimage"></a>Contact::deleteImage()
 
 ```php
@@ -1176,6 +1234,7 @@ Contact->deleteImage(contact_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{contact_id}/Image'`
+
 
 ### <a name="contactdelete"></a>Contact::delete()
 
@@ -1204,6 +1263,7 @@ Contact->delete(id);
 * [update](#commentupdate)
 * [delete](#commentdelete)
 
+
 ### <a name="commentget"></a>Comment::get()
 
 ```php
@@ -1221,6 +1281,7 @@ Comment->get(comment_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{comment_id}'`
+
 
 ### <a name="commentattachfile"></a>Comment::attachFile()
 
@@ -1242,6 +1303,7 @@ Comment->attachFile(comment_id, filename, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships?c_id={comment_id}&filename={filename}'`
 
+
 ### <a name="commentupdate"></a>Comment::update()
 
 ```php
@@ -1259,6 +1321,7 @@ Comment->update(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="commentdelete"></a>Comment::delete()
 
@@ -1295,6 +1358,7 @@ Comment->delete(comment_id);
 * [update](#filecategoryupdate)
 * [get](#filecategoryget)
 
+
 ### <a name="filecategoryadd"></a>File::Category::add()
 
 ```php
@@ -1312,6 +1376,7 @@ File->Category->add(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="filecategorydelete"></a>File::Category::delete()
 
@@ -1331,6 +1396,7 @@ File->Category->delete(file_category_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{file_category_id}'`
 
+
 ### <a name="filecategorylist"></a>File::Category::list()
 
 ```php
@@ -1344,6 +1410,7 @@ File->Category->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="filecategoryupdate"></a>File::Category::update()
 
@@ -1362,6 +1429,7 @@ File->Category->update(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="filecategoryget"></a>File::Category::get()
 
@@ -1386,6 +1454,7 @@ File->Category->get(file_category_id);
 #### Methods:
 
 * [get](#fileattachmentget)
+
 
 ### <a name="fileattachmentget"></a>File::Attachment::get()
 
@@ -1412,6 +1481,7 @@ File->Attachment->get(file_attachment_id);
 * [list](#customfieldlist)
 * [get](#customfieldget)
 
+
 ### <a name="customfieldlist"></a>CustomField::list()
 
 ```php
@@ -1425,6 +1495,7 @@ CustomField->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="customfieldget"></a>CustomField::get()
 
@@ -1454,6 +1525,7 @@ CustomField->get(custom_field_id);
 * [update](#teammembersupdate)
 * [get](#teammembersget)
 
+
 ### <a name="teammembersadd"></a>TeamMembers::add()
 
 ```php
@@ -1471,6 +1543,7 @@ TeamMembers->add(team_member);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="teammembersdelete"></a>TeamMembers::delete()
 
@@ -1490,6 +1563,7 @@ TeamMembers->delete(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{id}'`
 
+
 ### <a name="teammemberslist"></a>TeamMembers::list()
 
 ```php
@@ -1508,6 +1582,7 @@ TeamMembers->list([teamid]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?teamid={teamid:}'`
 
+
 ### <a name="teammembersupdate"></a>TeamMembers::update()
 
 ```php
@@ -1525,6 +1600,7 @@ TeamMembers->update(team_member);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="teammembersget"></a>TeamMembers::get()
 
@@ -1550,6 +1626,7 @@ TeamMembers->get(id);
 
 * [Category](#opportunitycategory)
 * [StateReasons](#opportunitystatereasons)
+
 #### Methods:
 
 * [getTasks](#opportunitygettasks)
@@ -1565,6 +1642,7 @@ TeamMembers->get(id);
 * [deleteImage](#opportunitydeleteimage)
 * [getEmails](#opportunitygetemails)
 * [delete](#opportunitydelete)
+
 
 ### <a name="opportunitygettasks"></a>Opportunity::getTasks()
 
@@ -1584,6 +1662,7 @@ Opportunity->getTasks(opportunity_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}/Tasks'`
 
+
 ### <a name="opportunitygetnotes"></a>Opportunity::getNotes()
 
 ```php
@@ -1602,6 +1681,7 @@ Opportunity->getNotes(opportunity_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}/Notes'`
 
+
 ### <a name="opportunityget"></a>Opportunity::get()
 
 ```php
@@ -1619,6 +1699,7 @@ Opportunity->get(opportunity_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}'`
+
 
 ### <a name="opportunitylist"></a>Opportunity::list()
 
@@ -1639,6 +1720,7 @@ Opportunity->list([ids][, tag]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships?ids={ids:}&tag={tag:}'`
 
+
 ### <a name="opportunityupdate"></a>Opportunity::update()
 
 ```php
@@ -1657,6 +1739,7 @@ Opportunity->update(data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
 
+
 ### <a name="opportunitygetstatehistory"></a>Opportunity::getStateHistory()
 
 ```php
@@ -1674,6 +1757,7 @@ Opportunity->getStateHistory(opportunity_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}/StateHistory'`
+
 
 ### <a name="opportunityaddimage"></a>Opportunity::addImage()
 
@@ -1695,6 +1779,7 @@ Opportunity->addImage(opportunity_id, filename, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{opportunity_id}/Image/{filename}'`
 
+
 ### <a name="opportunityadd"></a>Opportunity::add()
 
 ```php
@@ -1712,6 +1797,7 @@ Opportunity->add(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="opportunityupdateimage"></a>Opportunity::updateImage()
 
@@ -1733,6 +1819,7 @@ Opportunity->updateImage(opportunity_id, filename, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships/{opportunity_id}/Image/{filename}'`
 
+
 ### <a name="opportunitygetimage"></a>Opportunity::getImage()
 
 ```php
@@ -1750,6 +1837,7 @@ Opportunity->getImage(opportunity_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}/Image'`
+
 
 ### <a name="opportunitydeleteimage"></a>Opportunity::deleteImage()
 
@@ -1769,6 +1857,7 @@ Opportunity->deleteImage(opportunity_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{opportunity_id}/Image'`
 
+
 ### <a name="opportunitygetemails"></a>Opportunity::getEmails()
 
 ```php
@@ -1786,6 +1875,7 @@ Opportunity->getEmails(opportunity_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{opportunity_id}/Emails'`
+
 
 ### <a name="opportunitydelete"></a>Opportunity::delete()
 
@@ -1815,6 +1905,7 @@ Opportunity->delete(id);
 * [update](#opportunitycategoryupdate)
 * [get](#opportunitycategoryget)
 
+
 ### <a name="opportunitycategoryadd"></a>Opportunity::Category::add()
 
 ```php
@@ -1832,6 +1923,7 @@ Opportunity->Category->add(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="opportunitycategorydelete"></a>Opportunity::Category::delete()
 
@@ -1851,6 +1943,7 @@ Opportunity->Category->delete(opportunity_category_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{opportunity_category_id}'`
 
+
 ### <a name="opportunitycategorylist"></a>Opportunity::Category::list()
 
 ```php
@@ -1864,6 +1957,7 @@ Opportunity->Category->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="opportunitycategoryupdate"></a>Opportunity::Category::update()
 
@@ -1882,6 +1976,7 @@ Opportunity->Category->update(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="opportunitycategoryget"></a>Opportunity::Category::get()
 
@@ -1907,6 +2002,7 @@ Opportunity->Category->get(opportunity_category_id);
 
 * [list](#opportunitystatereasonslist)
 
+
 ### <a name="opportunitystatereasonslist"></a>Opportunity::StateReasons::list()
 
 ```php
@@ -1931,6 +2027,7 @@ Opportunity->StateReasons->list();
 * [update](#eventsupdate)
 * [get](#eventsget)
 
+
 ### <a name="eventsadd"></a>Events::add()
 
 ```php
@@ -1948,6 +2045,7 @@ Events->add(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
+
 
 ### <a name="eventsdelete"></a>Events::delete()
 
@@ -1967,6 +2065,7 @@ Events->delete(event_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{event_id}'`
 
+
 ### <a name="eventslist"></a>Events::list()
 
 ```php
@@ -1980,6 +2079,7 @@ Events->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="eventsupdate"></a>Events::update()
 
@@ -1998,6 +2098,7 @@ Events->update(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="eventsget"></a>Events::get()
 
@@ -2034,6 +2135,7 @@ Events->get(event_id);
 * [emails](#projectsemails)
 * [delete](#projectsdelete)
 
+
 ### <a name="projectsaddimage"></a>Projects::add_image()
 
 ```php
@@ -2054,6 +2156,7 @@ Projects->add_image(c_id, filename, image);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships/{c_id}/Image/{filename}'`
 
+
 ### <a name="projectstasks"></a>Projects::tasks()
 
 ```php
@@ -2071,6 +2174,7 @@ Projects->tasks(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Tasks'`
+
 
 ### <a name="projectsget"></a>Projects::get()
 
@@ -2090,6 +2194,7 @@ Projects->get(id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{id}'`
 
+
 ### <a name="projectsnotes"></a>Projects::notes()
 
 ```php
@@ -2107,6 +2212,7 @@ Projects->notes(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Notes'`
+
 
 ### <a name="projectslist"></a>Projects::list()
 
@@ -2127,6 +2233,7 @@ Projects->list([ids][, tag]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '//Relationships?ids={ids:}&tag={tag:}'`
 
+
 ### <a name="projectsupdate"></a>Projects::update()
 
 ```php
@@ -2144,6 +2251,7 @@ Projects->update(project);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships'`
+
 
 ### <a name="projectsdeleteimage"></a>Projects::delete_image()
 
@@ -2163,6 +2271,7 @@ Projects->delete_image(c_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/Relationships/{c_id}/Image'`
 
+
 ### <a name="projectsadd"></a>Projects::add()
 
 ```php
@@ -2181,6 +2290,7 @@ Projects->add(project);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/Relationships'`
 
+
 ### <a name="projectsgetimage"></a>Projects::get_image()
 
 ```php
@@ -2198,6 +2308,7 @@ Projects->get_image(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Image'`
+
 
 ### <a name="projectsupdateimage"></a>Projects::update_image()
 
@@ -2219,6 +2330,7 @@ Projects->update_image(c_id, filename, image);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/Relationships/{c_id}/Image/{filename}'`
 
+
 ### <a name="projectsemails"></a>Projects::emails()
 
 ```php
@@ -2236,6 +2348,7 @@ Projects->emails(c_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{c_id}/Emails'`
+
 
 ### <a name="projectsdelete"></a>Projects::delete()
 
@@ -2262,6 +2375,7 @@ Projects->delete(id);
 * [list](#pipelinestageslist)
 * [get](#pipelinestagesget)
 
+
 ### <a name="pipelinestageslist"></a>PipelineStages::list()
 
 ```php
@@ -2275,6 +2389,7 @@ PipelineStages->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships'`
+
 
 ### <a name="pipelinestagesget"></a>PipelineStages::get()
 
@@ -2293,3 +2408,4 @@ PipelineStages->get(id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/Relationships/{id}'`
+

@@ -21,6 +21,7 @@
 * [update](#customerupdate)
 * [get](#customerget)
 
+
 ### <a name="customercreate"></a>Customer::create()
 
 ```php
@@ -38,6 +39,7 @@ Customer->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="customerdelete"></a>Customer::delete()
 
@@ -57,6 +59,7 @@ Customer->delete(customer_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/{customer_id}.json'`
 
+
 ### <a name="customerlist"></a>Customer::list()
 
 ```php
@@ -74,6 +77,7 @@ Customer->list([name]);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?letter={name:}'`
+
 
 ### <a name="customerupdate"></a>Customer::update()
 
@@ -93,6 +97,7 @@ Customer->update(customer_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{customer_id}.json'`
+
 
 ### <a name="customerget"></a>Customer::get()
 
@@ -122,6 +127,7 @@ Customer->get(customer_id);
 * [update](#groupupdate)
 * [get](#groupget)
 
+
 ### <a name="groupcreate"></a>Group::create()
 
 ```php
@@ -139,6 +145,7 @@ Group->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="groupdelete"></a>Group::delete()
 
@@ -158,6 +165,7 @@ Group->delete(group_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/{group_id}.json'`
 
+
 ### <a name="grouplist"></a>Group::list()
 
 ```php
@@ -171,6 +179,7 @@ Group->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json'`
+
 
 ### <a name="groupupdate"></a>Group::update()
 
@@ -190,6 +199,7 @@ Group->update(group_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{group_id}.json'`
+
 
 ### <a name="groupget"></a>Group::get()
 
@@ -217,12 +227,14 @@ Group->get(group_id);
 * [Topic](#forumtopic)
 * [Post](#forumpost)
 * [Monitor](#forummonitor)
+
 #### Methods:
 
 * [create](#forumcreate)
 * [delete](#forumdelete)
 * [update](#forumupdate)
 * [get](#forumget)
+
 
 ### <a name="forumcreate"></a>Forum::create()
 
@@ -242,6 +254,7 @@ Forum->create(data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
 
+
 ### <a name="forumdelete"></a>Forum::delete()
 
 ```php
@@ -259,6 +272,7 @@ Forum->delete(forum_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/{forum_id}.json'`
+
 
 ### <a name="forumupdate"></a>Forum::update()
 
@@ -278,6 +292,7 @@ Forum->update(forum_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{forum_id}.json'`
+
 
 ### <a name="forumget"></a>Forum::get()
 
@@ -307,6 +322,7 @@ Forum->get(forum_id);
 * [update](#forumcategoryupdate)
 * [get](#forumcategoryget)
 
+
 ### <a name="forumcategorycreate"></a>Forum::Category::create()
 
 ```php
@@ -324,6 +340,7 @@ Forum->Category->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="forumcategorydelete"></a>Forum::Category::delete()
 
@@ -343,6 +360,7 @@ Forum->Category->delete(category_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/{category_id}.json'`
 
+
 ### <a name="forumcategorylist"></a>Forum::Category::list()
 
 ```php
@@ -356,6 +374,7 @@ Forum->Category->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json'`
+
 
 ### <a name="forumcategoryupdate"></a>Forum::Category::update()
 
@@ -375,6 +394,7 @@ Forum->Category->update(category_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{category_id}.json'`
+
 
 ### <a name="forumcategoryget"></a>Forum::Category::get()
 
@@ -403,6 +423,7 @@ Forum->Category->get(category_id);
 * [update](#forumtopicupdate)
 * [delete](#forumtopicdelete)
 
+
 ### <a name="forumtopiccreate"></a>Forum::Topic::create()
 
 ```php
@@ -420,6 +441,7 @@ Forum->Topic->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="forumtopicget"></a>Forum::Topic::get()
 
@@ -439,6 +461,7 @@ Forum->Topic->get(topic_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{topic_id}.json'`
 
+
 ### <a name="forumtopicupdate"></a>Forum::Topic::update()
 
 ```php
@@ -457,6 +480,7 @@ Forum->Topic->update(topic_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{topic_id}.json'`
+
 
 ### <a name="forumtopicdelete"></a>Forum::Topic::delete()
 
@@ -484,6 +508,7 @@ Forum->Topic->delete(topic_id);
 * [update](#forumpostupdate)
 * [delete](#forumpostdelete)
 
+
 ### <a name="forumpostcreate"></a>Forum::Post::create()
 
 ```php
@@ -505,6 +530,7 @@ Forum->Post->create(category_id, forum_id, topic_id, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json?category_id={category_id}&forum_id={forum_id}&topic_id={topic_id}'`
 
+
 ### <a name="forumpostupdate"></a>Forum::Post::update()
 
 ```php
@@ -523,6 +549,7 @@ Forum->Post->update(post_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{post_id}.json'`
+
 
 ### <a name="forumpostdelete"></a>Forum::Post::delete()
 
@@ -551,6 +578,7 @@ Forum->Post->delete(post_id);
 * [set](#forummonitorset)
 * [unset](#forummonitorunset)
 
+
 ### <a name="forummonitorstatus"></a>Forum::Monitor::status()
 
 ```php
@@ -570,6 +598,7 @@ Forum->Monitor->status(topic_id, user_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/support/discussions/topics/{topic_id}/check_monitor.json?user_id={user_id}'`
 
+
 ### <a name="forummonitortopics"></a>Forum::Monitor::topics()
 
 ```php
@@ -588,6 +617,7 @@ Forum->Monitor->topics(user_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/support/discussions/user_monitored?user_id={user_id}'`
 
+
 ### <a name="forummonitorset"></a>Forum::Monitor::set()
 
 ```php
@@ -601,6 +631,7 @@ Forum->Monitor->set();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'POST' '/customers.json'`
+
 
 ### <a name="forummonitorunset"></a>Forum::Monitor::unset()
 
@@ -634,6 +665,7 @@ Forum->Monitor->unset();
 * [update](#solutioncategoryupdate)
 * [delete](#solutioncategorydelete)
 
+
 ### <a name="solutioncategorycreate"></a>Solution::Category::create()
 
 ```php
@@ -651,6 +683,7 @@ Solution->Category->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="solutioncategoryget"></a>Solution::Category::get()
 
@@ -670,6 +703,7 @@ Solution->Category->get(category_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{category_id}'`
 
+
 ### <a name="solutioncategorylist"></a>Solution::Category::list()
 
 ```php
@@ -683,6 +717,7 @@ Solution->Category->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json'`
+
 
 ### <a name="solutioncategoryupdate"></a>Solution::Category::update()
 
@@ -702,6 +737,7 @@ Solution->Category->update(category_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{category_id}.json'`
+
 
 ### <a name="solutioncategorydelete"></a>Solution::Category::delete()
 
@@ -731,6 +767,7 @@ Solution->Category->delete(category_id);
 * [update](#solutionarticleupdate)
 * [get](#solutionarticleget)
 
+
 ### <a name="solutionarticlecreate"></a>Solution::Article::create()
 
 ```php
@@ -750,6 +787,7 @@ Solution->Article->create([tags], data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/articles.json?tags={tags:}'`
 
+
 ### <a name="solutionarticledelete"></a>Solution::Article::delete()
 
 ```php
@@ -768,6 +806,7 @@ Solution->Article->delete(article_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/articles/{article_id}.json'`
 
+
 ### <a name="solutionarticlelist"></a>Solution::Article::list()
 
 ```php
@@ -781,6 +820,7 @@ Solution->Article->list();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json'`
+
 
 ### <a name="solutionarticleupdate"></a>Solution::Article::update()
 
@@ -801,6 +841,7 @@ Solution->Article->update(article_id[, tags], data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/articles/{article_id}.json?tags={tags:}'`
+
 
 ### <a name="solutionarticleget"></a>Solution::Article::get()
 
@@ -829,6 +870,7 @@ Solution->Article->get(article_id);
 * [update](#solutionfolderupdate)
 * [delete](#solutionfolderdelete)
 
+
 ### <a name="solutionfoldercreate"></a>Solution::Folder::create()
 
 ```php
@@ -846,6 +888,7 @@ Solution->Folder->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="solutionfolderget"></a>Solution::Folder::get()
 
@@ -865,6 +908,7 @@ Solution->Folder->get(folder_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{folder_id}.json'`
 
+
 ### <a name="solutionfolderupdate"></a>Solution::Folder::update()
 
 ```php
@@ -883,6 +927,7 @@ Solution->Folder->update(folder_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{folder_id}.json'`
+
 
 ### <a name="solutionfolderdelete"></a>Solution::Folder::delete()
 
@@ -913,6 +958,7 @@ Solution->Folder->delete(folder_id);
 * [filter](#userfilter)
 * [delete](#userdelete)
 
+
 ### <a name="userget"></a>User::get()
 
 ```php
@@ -931,6 +977,7 @@ User->get(contact_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{contact_id}.json'`
 
+
 ### <a name="usercreate"></a>User::create()
 
 ```php
@@ -948,6 +995,7 @@ User->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="userlist"></a>User::list()
 
@@ -971,6 +1019,7 @@ User->list([state]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?&state={state}'`
 
+
 ### <a name="userupdate"></a>User::update()
 
 ```php
@@ -989,6 +1038,7 @@ User->update(contact_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{contact_id}.json'`
+
 
 ### <a name="userfilter"></a>User::filter()
 
@@ -1012,6 +1062,7 @@ User->filter(query[, state]);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?query={query}&state={state}'`
+
 
 ### <a name="userdelete"></a>User::delete()
 
@@ -1037,6 +1088,7 @@ User->delete(contact_id);
 
 * [Survey](#ticketsurvey)
 * [TimeEntry](#tickettimeentry)
+
 #### Methods:
 
 * [restore](#ticketrestore)
@@ -1056,6 +1108,7 @@ User->delete(contact_id);
 * [filterCompany](#ticketfiltercompany)
 * [delete](#ticketdelete)
 
+
 ### <a name="ticketrestore"></a>Ticket::restore()
 
 ```php
@@ -1073,6 +1126,7 @@ Ticket->restore(ticket_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'PUT' '/customers/{ticket_id}/restore.json'`
+
 
 ### <a name="ticketfilterrequester"></a>Ticket::filterRequester()
 
@@ -1092,6 +1146,7 @@ Ticket->filterRequester(requester_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/filter/requester/{requester_id}?format=json'`
 
+
 ### <a name="ticketget"></a>Ticket::get()
 
 ```php
@@ -1110,6 +1165,7 @@ Ticket->get(ticket_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{ticket_id}.json'`
 
+
 ### <a name="ticketfields"></a>Ticket::fields()
 
 ```php
@@ -1123,6 +1179,7 @@ Ticket->fields();
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' 'ticket_fields.json'`
+
 
 ### <a name="ticketcreate"></a>Ticket::create()
 
@@ -1141,6 +1198,7 @@ Ticket->create(data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers.json'`
+
 
 ### <a name="ticketfiltercompanyname"></a>Ticket::filterCompanyName()
 
@@ -1166,6 +1224,7 @@ Ticket->filterCompanyName(name[, filter = all_tickets]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?&company_name={name}&filter_name={filter}'`
 
+
 ### <a name="ticketlist"></a>Ticket::list()
 
 ```php
@@ -1189,6 +1248,7 @@ Ticket->list([filter = all_tickets]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?filter_name={filter}'`
 
+
 ### <a name="ticketupdate"></a>Ticket::update()
 
 ```php
@@ -1207,6 +1267,7 @@ Ticket->update(ticket_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{ticket_id}.json'`
+
 
 ### <a name="ticketfilter"></a>Ticket::filter()
 
@@ -1230,6 +1291,7 @@ Ticket->filter(filter);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/filter/{filter}?format=json'`
+
 
 ### <a name="ticketfilteremail"></a>Ticket::filterEmail()
 
@@ -1255,6 +1317,7 @@ Ticket->filterEmail(email[, filter = all_tickets]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?email={email}&filter_name={filter}'`
 
+
 ### <a name="ticketnote"></a>Ticket::note()
 
 ```php
@@ -1274,6 +1337,7 @@ Ticket->note(ticket_id, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/{ticket_id}/conversations/note.json'`
 
+
 ### <a name="ticketfilterview"></a>Ticket::filterView()
 
 ```php
@@ -1291,6 +1355,7 @@ Ticket->filterView(view_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/view/{view_id}?format=json'`
+
 
 ### <a name="ticketpick"></a>Ticket::pick()
 
@@ -1310,6 +1375,7 @@ Ticket->pick(ticket_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'PUT' '/customers/{ticket_id}/pick_tickets.json'`
 
+
 ### <a name="ticketassign"></a>Ticket::assign()
 
 ```php
@@ -1328,6 +1394,7 @@ Ticket->assign(ticket_id, user_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'PUT' '/customers/{ticket_id}/assign.json?responder_id={user_id}'`
+
 
 ### <a name="ticketfiltercompany"></a>Ticket::filterCompany()
 
@@ -1352,6 +1419,7 @@ Ticket->filterCompany(company_id[, filter = all_tickets]);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?company_id={company_id}&filter_name={filter}'`
+
 
 ### <a name="ticketdelete"></a>Ticket::delete()
 
@@ -1378,6 +1446,7 @@ Ticket->delete(ticket_id);
 * [create](#ticketsurveycreate)
 * [get](#ticketsurveyget)
 
+
 ### <a name="ticketsurveycreate"></a>Ticket::Survey::create()
 
 ```php
@@ -1396,6 +1465,7 @@ Ticket->Survey->create(rating, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/rate.json?rating={rating}'`
+
 
 ### <a name="ticketsurveyget"></a>Ticket::Survey::get()
 
@@ -1431,6 +1501,7 @@ Ticket->Survey->get();
 * [filterCompany](#tickettimeentryfiltercompany)
 * [delete](#tickettimeentrydelete)
 
+
 ### <a name="tickettimeentrytoggletimer"></a>Ticket::TimeEntry::toggleTimer()
 
 ```php
@@ -1448,6 +1519,7 @@ Ticket->TimeEntry->toggleTimer(time_entry_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'PUT' '/customers/{time_entry_id}/toggle_timer.json'`
+
 
 ### <a name="tickettimeentryfilterstarttime"></a>Ticket::TimeEntry::filterStartTime()
 
@@ -1467,6 +1539,7 @@ Ticket->TimeEntry->filterStartTime(start_date);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?start_date={start_date}'`
 
+
 ### <a name="tickettimeentryget"></a>Ticket::TimeEntry::get()
 
 ```php
@@ -1484,6 +1557,7 @@ Ticket->TimeEntry->get(ticket_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers/{ticket_id}/time_sheets.json'`
+
 
 ### <a name="tickettimeentrycreate"></a>Ticket::TimeEntry::create()
 
@@ -1504,6 +1578,7 @@ Ticket->TimeEntry->create(ticket_id, data);
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/{ticket_id}/time_sheets.json'`
 
+
 ### <a name="tickettimeentryfilteragentemail"></a>Ticket::TimeEntry::filterAgentEmail()
 
 ```php
@@ -1521,6 +1596,7 @@ Ticket->TimeEntry->filterAgentEmail(agent_email);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?agent_email={agent_email}'`
+
 
 ### <a name="tickettimeentrylist"></a>Ticket::TimeEntry::list()
 
@@ -1546,6 +1622,7 @@ Ticket->TimeEntry->list([filter][, value]);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?{filter}={value:}'`
 
+
 ### <a name="tickettimeentryupdate"></a>Ticket::TimeEntry::update()
 
 ```php
@@ -1565,6 +1642,7 @@ Ticket->TimeEntry->update(ticket_id, time_entry_id, data);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/{ticket_id}/time_sheets/{time_entry_id}.json'`
+
 
 ### <a name="tickettimeentryfilter"></a>Ticket::TimeEntry::filter()
 
@@ -1590,6 +1668,7 @@ Ticket->TimeEntry->filter(filter, value);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?{filter}={value}'`
 
+
 ### <a name="tickettimeentryfilterbillable"></a>Ticket::TimeEntry::filterBillable()
 
 ```php
@@ -1607,6 +1686,7 @@ Ticket->TimeEntry->filterBillable(billable);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?billable={billable}'`
+
 
 ### <a name="tickettimeentryfilteragent"></a>Ticket::TimeEntry::filterAgent()
 
@@ -1626,6 +1706,7 @@ Ticket->TimeEntry->filterAgent(agent_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?agent_id={agent_id}'`
 
+
 ### <a name="tickettimeentryfilterendtime"></a>Ticket::TimeEntry::filterEndTime()
 
 ```php
@@ -1643,6 +1724,7 @@ Ticket->TimeEntry->filterEndTime(end_date);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?end_date={end_date}'`
+
 
 ### <a name="tickettimeentryfiltercustomer"></a>Ticket::TimeEntry::filterCustomer()
 
@@ -1662,6 +1744,7 @@ Ticket->TimeEntry->filterCustomer(customer_id);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?customer_id={customer_id}'`
 
+
 ### <a name="tickettimeentryfiltercompanyemail"></a>Ticket::TimeEntry::filterCompanyEmail()
 
 ```php
@@ -1679,6 +1762,7 @@ Ticket->TimeEntry->filterCompanyEmail(company_email);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?company_email={company_email}'`
+
 
 ### <a name="tickettimeentryfiltercompany"></a>Ticket::TimeEntry::filterCompany()
 
@@ -1698,6 +1782,7 @@ Ticket->TimeEntry->filterCompany(company_name);
 
   `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?company_name={company_name}'`
 
+
 ### <a name="tickettimeentrydelete"></a>Ticket::TimeEntry::delete()
 
 ```php
@@ -1716,3 +1801,4 @@ Ticket->TimeEntry->delete(ticket_id, time_entry_id);
 * **Curl:**
 
   `curl -u 'username:password' -H 'application/json' -X 'DELETE' '/customers/{ticket_id}/time_sheets/{time_entry_id}.json'`
+
