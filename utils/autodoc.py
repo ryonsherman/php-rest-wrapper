@@ -130,15 +130,15 @@ def process(definition, outfile, **kwargs):
                 # output argument as required
                 if len(arg) < 2 or arg[1] == '!':
                     params_string += ", {}".format(arg[0])
-                    list_item = "{} **required**".format(arg[0])
+                    list_item = "`{}` **required**".format(arg[0])
                 # output argument as optional
                 elif len(arg) > 1 and not arg[1]:
                     params_string += "[, {}]".format(arg[0])
-                    list_item = "[{}] *optional*".format(arg[0])
+                    list_item = "[`{}`] *optional*".format(arg[0])
                 # output argument as optional with default
                 else:
                     params_string += "[, {} = {}]".format(arg[0], arg[1])
-                    list_item = "[{}] (default: {})".format(arg[0], arg[1])
+                    list_item = "[`{}`] (default: `{}`)".format(arg[0], arg[1])
 
                 # append param list item to output
                 params_list += "  * {}\n".format(list_item)
