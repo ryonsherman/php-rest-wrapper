@@ -31,9 +31,11 @@ template = \
 ```
 
 * **Method:** `{method_http}`
+
 * **Endpoint:** *{url}*
 {params_list}
 * **Curl:**
+
   `{curl}`
 """
 
