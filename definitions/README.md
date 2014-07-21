@@ -1,24 +1,26 @@
 # API Definitions
 
 ## Structure
-Module filenames should named `{api_name}.json`:
+
+* Definitions should named `{api_name}.json`
+* Documentation is autogenrated by `utils/autodoc.py`
 
 ### Resources
 
-* Resource names are capitolized.
+* Resource names are capitalized.
 * Replacement values are inherited from parent resources.
 
 **Example:**
 
 ```json
 {
-    # type: string
+    // type: string
     "tag": "value",
 
-    # type: list
+    // type: list
     "methodName": [ ... ],
 
-    # type: dict
+    // type: dict
     "Resource": {
         ...
     }
@@ -27,9 +29,9 @@ Module filenames should named `{api_name}.json`:
 
 #### Types
 
-* `string` types indicate replacement values
-* `list` types indicate resource methods
-* `dict` types indicate sub-resources
+* `string` type indicates a replacement tag/value.
+* `list` type indicates a resource method.
+* `dict` type indicates a nested resource.
 
 ### Methods
 
@@ -40,9 +42,12 @@ Module filenames should named `{api_name}.json`:
    * HTTP methods include `GET`, `PUT`, `POST`, and `DELETE`.
 * Additional parameters include those not parsed from endpoint URI (i.e. JSON data).
 
-**Example:**
+**Examples:**
+
 `"create": ["POST", "/users.json", "data"]`
+
 `"update": ["PUT", "/users/{user_id}.json", "data"]`
+
 
 ## Syntax
 
@@ -61,8 +66,11 @@ tag={name:default:opt1,opt2} options and default
 ```
 
 **Examples:**
-`/users/{user_id}.json` - required parameter
-`/users.json?letter={letter:}` - optional parameter
-`/users.json?filter={filter:!:all,unverified,deleted}` - required parameter with options
+
+`/users/{user_id}.json` – required parameter
+
+`/users.json?letter={letter:}` – optional parameter
+
+`/users.json?filter={filter:!:all,unverified,deleted}` – required parameter with options
 
 ### Replacement values
