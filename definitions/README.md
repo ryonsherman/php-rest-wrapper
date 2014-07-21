@@ -29,7 +29,7 @@
 
 #### Types
 
-* `string` type indicates a replacement tag/value.
+* `string` type indicates a [replacement](#replacement-values) tag/value.
 * `list` type indicates a resource method.
 * `dict` type indicates a nested resource.
 
@@ -49,7 +49,7 @@
 `"update": ["PUT", "/users/{user_id}.json", "data"]`
 
 
-## Syntax
+## URI Syntax
 
 ### Parameter tags
 
@@ -74,3 +74,32 @@ tag={name:default:opt1,opt2} options and default
 `/users.json?filter={filter:!:all,unverified,deleted}` – required parameter with options
 
 ### Replacement values
+
+Replacement values allow you to reduce a commonly used path across multiple method definitions.
+
+* TODO: inheritance
+* TODO: no recursion
+
+**Example:**
+
+```json
+{
+    "Forum": {
+        "root": "/forums",
+
+        "create": ["POST", "{root}.json", "data"],
+        "update": ["PUT", "{root}/{forum_id}.json", "data"],
+        "get": ["GET", "{root}/{forum_id}.json"],
+        "delete": ["DELETE", "{root}/{forum_id}.json"],
+
+        "Topic": {
+            "root": "{root}/{forum_id}/topics",
+
+            "create": ["POST", "{root}.json", "data"],
+            "update": ["PUT", "{root}/{topic_id}.json", "data"],
+            "get": ["GET", "{root}/{topic_id}.json"],
+            "delete": ["DELETE", "{root}/{topic_id}.json"]
+        },
+    }
+}
+```
