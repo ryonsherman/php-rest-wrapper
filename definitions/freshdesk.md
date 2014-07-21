@@ -34,7 +34,7 @@ Customer->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -53,7 +53,7 @@ Customer->delete(customer_id);
 
 * **Parameters:**
 
-  * customer_id **required**
+  * `customer_id` **required**
 
 * **Curl:**
 
@@ -72,7 +72,7 @@ Customer->list([name]);
 
 * **Parameters:**
 
-  * [name] *optional*
+  * [`name`] *optional*
 
 * **Curl:**
 
@@ -91,8 +91,8 @@ Customer->update(customer_id, data);
 
 * **Parameters:**
 
-  * customer_id **required**
-  * data **required**
+  * `customer_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -111,7 +111,7 @@ Customer->get(customer_id);
 
 * **Parameters:**
 
-  * customer_id **required**
+  * `customer_id` **required**
 
 * **Curl:**
 
@@ -140,7 +140,7 @@ Group->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -159,7 +159,7 @@ Group->delete(group_id);
 
 * **Parameters:**
 
-  * group_id **required**
+  * `group_id` **required**
 
 * **Curl:**
 
@@ -193,8 +193,8 @@ Group->update(group_id, data);
 
 * **Parameters:**
 
-  * group_id **required**
-  * data **required**
+  * `group_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -213,7 +213,7 @@ Group->get(group_id);
 
 * **Parameters:**
 
-  * group_id **required**
+  * `group_id` **required**
 
 * **Curl:**
 
@@ -248,7 +248,7 @@ Forum->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -267,7 +267,7 @@ Forum->delete(forum_id);
 
 * **Parameters:**
 
-  * forum_id **required**
+  * `forum_id` **required**
 
 * **Curl:**
 
@@ -286,8 +286,8 @@ Forum->update(forum_id, data);
 
 * **Parameters:**
 
-  * forum_id **required**
-  * data **required**
+  * `forum_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -306,7 +306,7 @@ Forum->get(forum_id);
 
 * **Parameters:**
 
-  * forum_id **required**
+  * `forum_id` **required**
 
 * **Curl:**
 
@@ -335,7 +335,7 @@ Forum->Category->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -354,7 +354,7 @@ Forum->Category->delete(category_id);
 
 * **Parameters:**
 
-  * category_id **required**
+  * `category_id` **required**
 
 * **Curl:**
 
@@ -388,8 +388,8 @@ Forum->Category->update(category_id, data);
 
 * **Parameters:**
 
-  * category_id **required**
-  * data **required**
+  * `category_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -408,7 +408,7 @@ Forum->Category->get(category_id);
 
 * **Parameters:**
 
-  * category_id **required**
+  * `category_id` **required**
 
 * **Curl:**
 
@@ -436,7 +436,7 @@ Forum->Topic->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -455,7 +455,7 @@ Forum->Topic->get(topic_id);
 
 * **Parameters:**
 
-  * topic_id **required**
+  * `topic_id` **required**
 
 * **Curl:**
 
@@ -474,8 +474,8 @@ Forum->Topic->update(topic_id, data);
 
 * **Parameters:**
 
-  * topic_id **required**
-  * data **required**
+  * `topic_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -494,7 +494,7 @@ Forum->Topic->delete(topic_id);
 
 * **Parameters:**
 
-  * topic_id **required**
+  * `topic_id` **required**
 
 * **Curl:**
 
@@ -521,10 +521,10 @@ Forum->Post->create(category_id, forum_id, topic_id, data);
 
 * **Parameters:**
 
-  * category_id **required**
-  * forum_id **required**
-  * topic_id **required**
-  * data **required**
+  * `category_id` **required**
+  * `forum_id` **required**
+  * `topic_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -543,8 +543,8 @@ Forum->Post->update(post_id, data);
 
 * **Parameters:**
 
-  * post_id **required**
-  * data **required**
+  * `post_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -563,7 +563,7 @@ Forum->Post->delete(post_id);
 
 * **Parameters:**
 
-  * post_id **required**
+  * `post_id` **required**
 
 * **Curl:**
 
@@ -591,8 +591,8 @@ Forum->Monitor->status(topic_id, user_id);
 
 * **Parameters:**
 
-  * topic_id **required**
-  * user_id **required**
+  * `topic_id` **required**
+  * `user_id` **required**
 
 * **Curl:**
 
@@ -611,7 +611,7 @@ Forum->Monitor->topics(user_id);
 
 * **Parameters:**
 
-  * user_id **required**
+  * `user_id` **required**
 
 * **Curl:**
 
@@ -678,7 +678,7 @@ Solution->Category->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -697,7 +697,7 @@ Solution->Category->get(category_id);
 
 * **Parameters:**
 
-  * category_id **required**
+  * `category_id` **required**
 
 * **Curl:**
 
@@ -731,8 +731,8 @@ Solution->Category->update(category_id, data);
 
 * **Parameters:**
 
-  * category_id **required**
-  * data **required**
+  * `category_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -751,7 +751,7 @@ Solution->Category->delete(category_id);
 
 * **Parameters:**
 
-  * category_id **required**
+  * `category_id` **required**
 
 * **Curl:**
 
@@ -780,8 +780,8 @@ Solution->Article->create([tags], data);
 
 * **Parameters:**
 
-  * [tags] *optional*
-  * data **required**
+  * [`tags`] *optional*
+  * `data` **required**
 
 * **Curl:**
 
@@ -800,7 +800,7 @@ Solution->Article->delete(article_id);
 
 * **Parameters:**
 
-  * article_id **required**
+  * `article_id` **required**
 
 * **Curl:**
 
@@ -834,9 +834,9 @@ Solution->Article->update(article_id[, tags], data);
 
 * **Parameters:**
 
-  * article_id **required**
-  * [tags] *optional*
-  * data **required**
+  * `article_id` **required**
+  * [`tags`] *optional*
+  * `data` **required**
 
 * **Curl:**
 
@@ -855,7 +855,7 @@ Solution->Article->get(article_id);
 
 * **Parameters:**
 
-  * article_id **required**
+  * `article_id` **required**
 
 * **Curl:**
 
@@ -883,7 +883,7 @@ Solution->Folder->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -902,7 +902,7 @@ Solution->Folder->get(folder_id);
 
 * **Parameters:**
 
-  * folder_id **required**
+  * `folder_id` **required**
 
 * **Curl:**
 
@@ -921,8 +921,8 @@ Solution->Folder->update(folder_id, data);
 
 * **Parameters:**
 
-  * folder_id **required**
-  * data **required**
+  * `folder_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -941,7 +941,7 @@ Solution->Folder->delete(folder_id);
 
 * **Parameters:**
 
-  * folder_id **required**
+  * `folder_id` **required**
 
 * **Curl:**
 
@@ -971,7 +971,7 @@ User->get(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -990,7 +990,7 @@ User->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1009,7 +1009,7 @@ User->list([state]);
 
 * **Parameters:**
 
-  * [state] *optional*
+  * [`state`] *optional*
      * verified
      * unverified
      * all
@@ -1032,8 +1032,8 @@ User->update(contact_id, data);
 
 * **Parameters:**
 
-  * contact_id **required**
-  * data **required**
+  * `contact_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1052,8 +1052,8 @@ User->filter(query[, state]);
 
 * **Parameters:**
 
-  * query **required**
-  * [state] *optional*
+  * `query` **required**
+  * [`state`] *optional*
      * verified
      * unverified
      * all
@@ -1076,7 +1076,7 @@ User->delete(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1121,7 +1121,7 @@ Ticket->restore(ticket_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
+  * `ticket_id` **required**
 
 * **Curl:**
 
@@ -1140,7 +1140,7 @@ Ticket->filterRequester(requester_id);
 
 * **Parameters:**
 
-  * requester_id **required**
+  * `requester_id` **required**
 
 * **Curl:**
 
@@ -1159,7 +1159,7 @@ Ticket->get(ticket_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
+  * `ticket_id` **required**
 
 * **Curl:**
 
@@ -1193,7 +1193,7 @@ Ticket->create(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1212,8 +1212,8 @@ Ticket->filterCompanyName(name[, filter = all_tickets]);
 
 * **Parameters:**
 
-  * name **required**
-  * [filter] (default: all_tickets)
+  * `name` **required**
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1237,7 +1237,7 @@ Ticket->list([filter = all_tickets]);
 
 * **Parameters:**
 
-  * [filter] (default: all_tickets)
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1261,8 +1261,8 @@ Ticket->update(ticket_id, data);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * data **required**
+  * `ticket_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1281,7 +1281,7 @@ Ticket->filter(filter);
 
 * **Parameters:**
 
-  * filter **required**
+  * `filter` **required**
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1305,8 +1305,8 @@ Ticket->filterEmail(email[, filter = all_tickets]);
 
 * **Parameters:**
 
-  * email **required**
-  * [filter] (default: all_tickets)
+  * `email` **required**
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1330,8 +1330,8 @@ Ticket->note(ticket_id, data);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * data **required**
+  * `ticket_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1350,7 +1350,7 @@ Ticket->filterView(view_id);
 
 * **Parameters:**
 
-  * view_id **required**
+  * `view_id` **required**
 
 * **Curl:**
 
@@ -1369,7 +1369,7 @@ Ticket->pick(ticket_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
+  * `ticket_id` **required**
 
 * **Curl:**
 
@@ -1388,8 +1388,8 @@ Ticket->assign(ticket_id, user_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * user_id **required**
+  * `ticket_id` **required**
+  * `user_id` **required**
 
 * **Curl:**
 
@@ -1408,8 +1408,8 @@ Ticket->filterCompany(company_id[, filter = all_tickets]);
 
 * **Parameters:**
 
-  * company_id **required**
-  * [filter] (default: all_tickets)
+  * `company_id` **required**
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1433,7 +1433,7 @@ Ticket->delete(ticket_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
+  * `ticket_id` **required**
 
 * **Curl:**
 
@@ -1459,8 +1459,8 @@ Ticket->Survey->create(rating, data);
 
 * **Parameters:**
 
-  * rating **required**
-  * data **required**
+  * `rating` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1514,7 +1514,7 @@ Ticket->TimeEntry->toggleTimer(time_entry_id);
 
 * **Parameters:**
 
-  * time_entry_id **required**
+  * `time_entry_id` **required**
 
 * **Curl:**
 
@@ -1533,7 +1533,7 @@ Ticket->TimeEntry->filterStartTime(start_date);
 
 * **Parameters:**
 
-  * start_date **required**
+  * `start_date` **required**
 
 * **Curl:**
 
@@ -1552,7 +1552,7 @@ Ticket->TimeEntry->get(ticket_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
+  * `ticket_id` **required**
 
 * **Curl:**
 
@@ -1571,8 +1571,8 @@ Ticket->TimeEntry->create(ticket_id, data);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * data **required**
+  * `ticket_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1591,7 +1591,7 @@ Ticket->TimeEntry->filterAgentEmail(agent_email);
 
 * **Parameters:**
 
-  * agent_email **required**
+  * `agent_email` **required**
 
 * **Curl:**
 
@@ -1610,13 +1610,13 @@ Ticket->TimeEntry->list([filter][, value]);
 
 * **Parameters:**
 
-  * [filter] *optional*
+  * [`filter`] *optional*
      * all_tickets
      * new_my_open
      * monitored_by
      * spam
      * deleted
-  * [value] *optional*
+  * [`value`] *optional*
 
 * **Curl:**
 
@@ -1635,9 +1635,9 @@ Ticket->TimeEntry->update(ticket_id, time_entry_id, data);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * time_entry_id **required**
-  * data **required**
+  * `ticket_id` **required**
+  * `time_entry_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1656,13 +1656,13 @@ Ticket->TimeEntry->filter(filter, value);
 
 * **Parameters:**
 
-  * filter **required**
+  * `filter` **required**
      * all_tickets
      * new_my_open
      * monitored_by
      * spam
      * deleted
-  * value **required**
+  * `value` **required**
 
 * **Curl:**
 
@@ -1681,7 +1681,7 @@ Ticket->TimeEntry->filterBillable(billable);
 
 * **Parameters:**
 
-  * billable **required**
+  * `billable` **required**
 
 * **Curl:**
 
@@ -1700,7 +1700,7 @@ Ticket->TimeEntry->filterAgent(agent_id);
 
 * **Parameters:**
 
-  * agent_id **required**
+  * `agent_id` **required**
 
 * **Curl:**
 
@@ -1719,7 +1719,7 @@ Ticket->TimeEntry->filterEndTime(end_date);
 
 * **Parameters:**
 
-  * end_date **required**
+  * `end_date` **required**
 
 * **Curl:**
 
@@ -1738,7 +1738,7 @@ Ticket->TimeEntry->filterCustomer(customer_id);
 
 * **Parameters:**
 
-  * customer_id **required**
+  * `customer_id` **required**
 
 * **Curl:**
 
@@ -1757,7 +1757,7 @@ Ticket->TimeEntry->filterCompanyEmail(company_email);
 
 * **Parameters:**
 
-  * company_email **required**
+  * `company_email` **required**
 
 * **Curl:**
 
@@ -1776,7 +1776,7 @@ Ticket->TimeEntry->filterCompany(company_name);
 
 * **Parameters:**
 
-  * company_name **required**
+  * `company_name` **required**
 
 * **Curl:**
 
@@ -1795,8 +1795,8 @@ Ticket->TimeEntry->delete(ticket_id, time_entry_id);
 
 * **Parameters:**
 
-  * ticket_id **required**
-  * time_entry_id **required**
+  * `ticket_id` **required**
+  * `time_entry_id` **required**
 
 * **Curl:**
 

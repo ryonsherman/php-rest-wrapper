@@ -70,7 +70,7 @@ TaskCategories->add(task_category);
 
 * **Parameters:**
 
-  * task_category **required**
+  * `task_category` **required**
 
 * **Curl:**
 
@@ -89,7 +89,7 @@ TaskCategories->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -123,7 +123,7 @@ TaskCategories->update(task_category);
 
 * **Parameters:**
 
-  * task_category **required**
+  * `task_category` **required**
 
 * **Curl:**
 
@@ -142,7 +142,7 @@ TaskCategories->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -173,8 +173,8 @@ Tasks->add_comment(c_id, task_comment);
 
 * **Parameters:**
 
-  * c_id **required**
-  * task_comment **required**
+  * `c_id` **required**
+  * `task_comment` **required**
 
 * **Curl:**
 
@@ -193,7 +193,7 @@ Tasks->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -212,7 +212,7 @@ Tasks->list([id]);
 
 * **Parameters:**
 
-  * [id] *optional*
+  * [`id`] *optional*
 
 * **Curl:**
 
@@ -231,7 +231,7 @@ Tasks->update(task);
 
 * **Parameters:**
 
-  * task **required**
+  * `task` **required**
 
 * **Curl:**
 
@@ -250,7 +250,7 @@ Tasks->add(task);
 
 * **Parameters:**
 
-  * task **required**
+  * `task` **required**
 
 * **Curl:**
 
@@ -269,7 +269,7 @@ Tasks->get_comments(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -288,7 +288,7 @@ Tasks->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -329,7 +329,7 @@ Pipelines->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -370,7 +370,7 @@ Users->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -395,7 +395,7 @@ Tags->list(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -452,9 +452,9 @@ Organisations->add_image(c_id, filename, image);
 
 * **Parameters:**
 
-  * c_id **required**
-  * filename **required**
-  * image **required**
+  * `c_id` **required**
+  * `filename` **required**
+  * `image` **required**
 
 * **Curl:**
 
@@ -473,7 +473,7 @@ Organisations->tasks(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -492,7 +492,7 @@ Organisations->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -511,7 +511,7 @@ Organisations->notes(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -530,9 +530,9 @@ Organisations->list([ids][, domain][, tag]);
 
 * **Parameters:**
 
-  * [ids] *optional*
-  * [domain] *optional*
-  * [tag] *optional*
+  * [`ids`] *optional*
+  * [`domain`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -551,7 +551,7 @@ Organisations->update(organisation);
 
 * **Parameters:**
 
-  * organisation **required**
+  * `organisation` **required**
 
 * **Curl:**
 
@@ -570,7 +570,7 @@ Organisations->delete_image(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -589,7 +589,7 @@ Organisations->add(organisation);
 
 * **Parameters:**
 
-  * organisation **required**
+  * `organisation` **required**
 
 * **Curl:**
 
@@ -608,7 +608,7 @@ Organisations->get_image(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -627,9 +627,9 @@ Organisations->update_image(c_id, filename, image);
 
 * **Parameters:**
 
-  * c_id **required**
-  * filename **required**
-  * image **required**
+  * `c_id` **required**
+  * `filename` **required**
+  * `image` **required**
 
 * **Curl:**
 
@@ -648,7 +648,7 @@ Organisations->emails(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -667,7 +667,7 @@ Organisations->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -696,7 +696,7 @@ ProjectCategories->add(project_category);
 
 * **Parameters:**
 
-  * project_category **required**
+  * `project_category` **required**
 
 * **Curl:**
 
@@ -715,7 +715,7 @@ ProjectCategories->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -749,7 +749,7 @@ ProjectCategories->update(project_category);
 
 * **Parameters:**
 
-  * project_category **required**
+  * `project_category` **required**
 
 * **Curl:**
 
@@ -768,7 +768,7 @@ ProjectCategories->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -797,8 +797,8 @@ Email->list([ids][, tag]);
 
 * **Parameters:**
 
-  * [ids] *optional*
-  * [tag] *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -817,7 +817,7 @@ Email->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -836,8 +836,8 @@ Email->post_comment(c_id, data);
 
 * **Parameters:**
 
-  * c_id **required**
-  * data **required**
+  * `c_id` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -856,7 +856,7 @@ Email->comments(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -875,7 +875,7 @@ Email->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -925,7 +925,7 @@ Teams->add(team);
 
 * **Parameters:**
 
-  * team **required**
+  * `team` **required**
 
 * **Curl:**
 
@@ -944,7 +944,7 @@ Teams->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -978,7 +978,7 @@ Teams->update(team);
 
 * **Parameters:**
 
-  * team **required**
+  * `team` **required**
 
 * **Curl:**
 
@@ -997,7 +997,7 @@ Teams->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1033,7 +1033,7 @@ Contact->getTasks(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1052,7 +1052,7 @@ Contact->getNotes(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1071,7 +1071,7 @@ Contact->getEmail(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1090,7 +1090,7 @@ Contact->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1109,9 +1109,9 @@ Contact->list([ids][, email][, tag]);
 
 * **Parameters:**
 
-  * [ids] *optional*
-  * [email] *optional*
-  * [tag] *optional*
+  * [`ids`] *optional*
+  * [`email`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -1130,7 +1130,7 @@ Contact->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1149,9 +1149,9 @@ Contact->addImage(contact_id, filename, data);
 
 * **Parameters:**
 
-  * contact_id **required**
-  * filename **required**
-  * data **required**
+  * `contact_id` **required**
+  * `filename` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1170,7 +1170,7 @@ Contact->add(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1189,9 +1189,9 @@ Contact->updateImage(contact_id, filename, data);
 
 * **Parameters:**
 
-  * contact_id **required**
-  * filename **required**
-  * data **required**
+  * `contact_id` **required**
+  * `filename` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1210,7 +1210,7 @@ Contact->getImage(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1229,7 +1229,7 @@ Contact->deleteImage(contact_id);
 
 * **Parameters:**
 
-  * contact_id **required**
+  * `contact_id` **required**
 
 * **Curl:**
 
@@ -1248,7 +1248,7 @@ Contact->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1276,7 +1276,7 @@ Comment->get(comment_id);
 
 * **Parameters:**
 
-  * comment_id **required**
+  * `comment_id` **required**
 
 * **Curl:**
 
@@ -1295,9 +1295,9 @@ Comment->attachFile(comment_id, filename, data);
 
 * **Parameters:**
 
-  * comment_id **required**
-  * filename **required**
-  * data **required**
+  * `comment_id` **required**
+  * `filename` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1316,7 +1316,7 @@ Comment->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1335,7 +1335,7 @@ Comment->delete(comment_id);
 
 * **Parameters:**
 
-  * comment_id **required**
+  * `comment_id` **required**
 
 * **Curl:**
 
@@ -1371,7 +1371,7 @@ File->Category->add(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1390,7 +1390,7 @@ File->Category->delete(file_category_id);
 
 * **Parameters:**
 
-  * file_category_id **required**
+  * `file_category_id` **required**
 
 * **Curl:**
 
@@ -1424,7 +1424,7 @@ File->Category->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1443,7 +1443,7 @@ File->Category->get(file_category_id);
 
 * **Parameters:**
 
-  * file_category_id **required**
+  * `file_category_id` **required**
 
 * **Curl:**
 
@@ -1468,7 +1468,7 @@ File->Attachment->get(file_attachment_id);
 
 * **Parameters:**
 
-  * file_attachment_id **required**
+  * `file_attachment_id` **required**
 
 * **Curl:**
 
@@ -1509,7 +1509,7 @@ CustomField->get(custom_field_id);
 
 * **Parameters:**
 
-  * custom_field_id **required**
+  * `custom_field_id` **required**
 
 * **Curl:**
 
@@ -1538,7 +1538,7 @@ TeamMembers->add(team_member);
 
 * **Parameters:**
 
-  * team_member **required**
+  * `team_member` **required**
 
 * **Curl:**
 
@@ -1557,7 +1557,7 @@ TeamMembers->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1576,7 +1576,7 @@ TeamMembers->list([teamid]);
 
 * **Parameters:**
 
-  * [teamid] *optional*
+  * [`teamid`] *optional*
 
 * **Curl:**
 
@@ -1595,7 +1595,7 @@ TeamMembers->update(team_member);
 
 * **Parameters:**
 
-  * team_member **required**
+  * `team_member` **required**
 
 * **Curl:**
 
@@ -1614,7 +1614,7 @@ TeamMembers->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1656,7 +1656,7 @@ Opportunity->getTasks(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1675,7 +1675,7 @@ Opportunity->getNotes(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1694,7 +1694,7 @@ Opportunity->get(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1713,8 +1713,8 @@ Opportunity->list([ids][, tag]);
 
 * **Parameters:**
 
-  * [ids] *optional*
-  * [tag] *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -1733,7 +1733,7 @@ Opportunity->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1752,7 +1752,7 @@ Opportunity->getStateHistory(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1771,9 +1771,9 @@ Opportunity->addImage(opportunity_id, filename, data);
 
 * **Parameters:**
 
-  * opportunity_id **required**
-  * filename **required**
-  * data **required**
+  * `opportunity_id` **required**
+  * `filename` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1792,7 +1792,7 @@ Opportunity->add(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1811,9 +1811,9 @@ Opportunity->updateImage(opportunity_id, filename, data);
 
 * **Parameters:**
 
-  * opportunity_id **required**
-  * filename **required**
-  * data **required**
+  * `opportunity_id` **required**
+  * `filename` **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1832,7 +1832,7 @@ Opportunity->getImage(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1851,7 +1851,7 @@ Opportunity->deleteImage(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1870,7 +1870,7 @@ Opportunity->getEmails(opportunity_id);
 
 * **Parameters:**
 
-  * opportunity_id **required**
+  * `opportunity_id` **required**
 
 * **Curl:**
 
@@ -1889,7 +1889,7 @@ Opportunity->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -1918,7 +1918,7 @@ Opportunity->Category->add(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1937,7 +1937,7 @@ Opportunity->Category->delete(opportunity_category_id);
 
 * **Parameters:**
 
-  * opportunity_category_id **required**
+  * `opportunity_category_id` **required**
 
 * **Curl:**
 
@@ -1971,7 +1971,7 @@ Opportunity->Category->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -1990,7 +1990,7 @@ Opportunity->Category->get(opportunity_category_id);
 
 * **Parameters:**
 
-  * opportunity_category_id **required**
+  * `opportunity_category_id` **required**
 
 * **Curl:**
 
@@ -2040,7 +2040,7 @@ Events->add(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -2059,7 +2059,7 @@ Events->delete(event_id);
 
 * **Parameters:**
 
-  * event_id **required**
+  * `event_id` **required**
 
 * **Curl:**
 
@@ -2093,7 +2093,7 @@ Events->update(data);
 
 * **Parameters:**
 
-  * data **required**
+  * `data` **required**
 
 * **Curl:**
 
@@ -2112,7 +2112,7 @@ Events->get(event_id);
 
 * **Parameters:**
 
-  * event_id **required**
+  * `event_id` **required**
 
 * **Curl:**
 
@@ -2148,9 +2148,9 @@ Projects->add_image(c_id, filename, image);
 
 * **Parameters:**
 
-  * c_id **required**
-  * filename **required**
-  * image **required**
+  * `c_id` **required**
+  * `filename` **required**
+  * `image` **required**
 
 * **Curl:**
 
@@ -2169,7 +2169,7 @@ Projects->tasks(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -2188,7 +2188,7 @@ Projects->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -2207,7 +2207,7 @@ Projects->notes(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -2226,8 +2226,8 @@ Projects->list([ids][, tag]);
 
 * **Parameters:**
 
-  * [ids] *optional*
-  * [tag] *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -2246,7 +2246,7 @@ Projects->update(project);
 
 * **Parameters:**
 
-  * project **required**
+  * `project` **required**
 
 * **Curl:**
 
@@ -2265,7 +2265,7 @@ Projects->delete_image(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -2284,7 +2284,7 @@ Projects->add(project);
 
 * **Parameters:**
 
-  * project **required**
+  * `project` **required**
 
 * **Curl:**
 
@@ -2303,7 +2303,7 @@ Projects->get_image(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -2322,9 +2322,9 @@ Projects->update_image(c_id, filename, image);
 
 * **Parameters:**
 
-  * c_id **required**
-  * filename **required**
-  * image **required**
+  * `c_id` **required**
+  * `filename` **required**
+  * `image` **required**
 
 * **Curl:**
 
@@ -2343,7 +2343,7 @@ Projects->emails(c_id);
 
 * **Parameters:**
 
-  * c_id **required**
+  * `c_id` **required**
 
 * **Curl:**
 
@@ -2362,7 +2362,7 @@ Projects->delete(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
@@ -2403,7 +2403,7 @@ PipelineStages->get(id);
 
 * **Parameters:**
 
-  * id **required**
+  * `id` **required**
 
 * **Curl:**
 
