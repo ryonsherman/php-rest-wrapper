@@ -3,7 +3,13 @@ PHP RESTWrapper
 
 A PHP REST wrapper using pluggable API definitions
 
+* [Usage](#usage)
+* [Definitions](#definitions)
 * [Example](#examples)
+
+## Usage
+
+## Definitions
 
 ## Examples
 
