@@ -312,7 +312,7 @@ Contact->list([ids][, email][, tag]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?ids={ids:}&email={email:}&tag={tag:}*
+* **Endpoint:** */Comments?ids={ids}&email={email}&tag={tag}*
 
 * **Parameters:**
 
@@ -322,7 +322,7 @@ Contact->list([ids][, email][, tag]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids:}&email={email:}&tag={tag:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids}&email={email}&tag={tag}'`
 
 
 ### <a name="contactupdate"></a>Contact::update()
@@ -523,7 +523,7 @@ Email->list([ids][, tag]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?ids={ids:}&tag={tag:}*
+* **Endpoint:** */Comments?ids={ids}&tag={tag}*
 
 * **Parameters:**
 
@@ -532,7 +532,7 @@ Email->list([ids][, tag]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids:}&tag={tag:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids}&tag={tag}'`
 
 
 ### <a name="emailpostcomment"></a>Email::post_comment()
@@ -1012,7 +1012,7 @@ Opportunity->list([ids][, tag]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?ids={ids:}&tag={tag:}*
+* **Endpoint:** */Comments?ids={ids}&tag={tag}*
 
 * **Parameters:**
 
@@ -1021,7 +1021,7 @@ Opportunity->list([ids][, tag]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids:}&tag={tag:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids}&tag={tag}'`
 
 
 ### <a name="opportunityupdate"></a>Opportunity::update()
@@ -1346,7 +1346,7 @@ Organisations->list([ids][, domain][, tag]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?ids={ids:}&domain={domain:}&tag={tag:}*
+* **Endpoint:** */Comments?ids={ids}&domain={domain}&tag={tag}*
 
 * **Parameters:**
 
@@ -1356,7 +1356,7 @@ Organisations->list([ids][, domain][, tag]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids:}&domain={domain:}&tag={tag:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={ids}&domain={domain}&tag={tag}'`
 
 
 ### <a name="organisationsnotes"></a>Organisations::notes()
@@ -1780,7 +1780,7 @@ Projects->list([ids][, tag]);
 
 * **Method:** `GET`
 
-* **Endpoint:** *//Comments?ids={ids:}&tag={tag:}*
+* **Endpoint:** *//Comments?ids={ids}&tag={tag}*
 
 * **Parameters:**
 
@@ -1789,7 +1789,7 @@ Projects->list([ids][, tag]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '//Comments?ids={ids:}&tag={tag:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '//Comments?ids={ids}&tag={tag}'`
 
 
 ### <a name="projectsnotes"></a>Projects::notes()
@@ -2133,7 +2133,7 @@ Tasks->list([id]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?ids={id:}*
+* **Endpoint:** */Comments?ids={id}*
 
 * **Parameters:**
 
@@ -2141,7 +2141,7 @@ Tasks->list([id]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={id:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?ids={id}'`
 
 
 ### <a name="tasksupdate"></a>Tasks::update()
@@ -2238,7 +2238,7 @@ TeamMembers->list([teamid]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */Comments?teamid={teamid:}*
+* **Endpoint:** */Comments?teamid={teamid}*
 
 * **Parameters:**
 
@@ -2246,7 +2246,7 @@ TeamMembers->list([teamid]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?teamid={teamid:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/Comments?teamid={teamid}'`
 
 
 ### <a name="teammembersupdate"></a>TeamMembers::update()

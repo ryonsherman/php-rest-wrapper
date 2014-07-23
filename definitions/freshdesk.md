@@ -87,7 +87,7 @@ Customer->list([name]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */customers.json?letter={name:}*
+* **Endpoint:** */customers.json?letter={name}*
 
 * **Parameters:**
 
@@ -95,7 +95,7 @@ Customer->list([name]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?letter={name:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?letter={name}'`
 
 
 ### <a name="customerupdate"></a>Customer::update()
@@ -674,7 +674,7 @@ Solution->Article->create([tags], data);
 
 * **Method:** `POST`
 
-* **Endpoint:** */customers/articles.json?tags={tags:}*
+* **Endpoint:** */customers/articles.json?tags={tags}*
 
 * **Parameters:**
 
@@ -683,7 +683,7 @@ Solution->Article->create([tags], data);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/articles.json?tags={tags:}'`
+  `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'POST' '/customers/articles.json?tags={tags}'`
 
 
 ### <a name="solutionarticledelete"></a>Solution::Article::delete()
@@ -747,7 +747,7 @@ Solution->Article->update(article_id[, tags], data);
 
 * **Method:** `PUT`
 
-* **Endpoint:** */customers/articles/{article_id}.json?tags={tags:}*
+* **Endpoint:** */customers/articles/{article_id}.json?tags={tags}*
 
 * **Parameters:**
 
@@ -757,7 +757,7 @@ Solution->Article->update(article_id[, tags], data);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/articles/{article_id}.json?tags={tags:}'`
+  `curl -u 'username:password' -H 'application/json' -d '{data}' -X 'PUT' '/customers/articles/{article_id}.json?tags={tags}'`
 
 ## <a name="solutioncategory"></a>Solution::Category
 
@@ -1611,7 +1611,7 @@ Ticket->TimeEntry->list([filter][, value]);
 
 * **Method:** `GET`
 
-* **Endpoint:** */customers.json?{filter}={value:}*
+* **Endpoint:** */customers.json?{filter}={value}*
 
 * **Parameters:**
 
@@ -1625,7 +1625,7 @@ Ticket->TimeEntry->list([filter][, value]);
 
 * **Curl:**
 
-  `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?{filter}={value:}'`
+  `curl -u 'username:password' -H 'application/json' -X 'GET' '/customers.json?{filter}={value}'`
 
 
 ### <a name="tickettimeentrytoggletimer"></a>Ticket::TimeEntry::toggleTimer()

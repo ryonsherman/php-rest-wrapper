@@ -125,8 +125,8 @@ def process(definition, outfile, **kwargs):
                 # initialize argument options
                 opts = []
                 # parse out argument options if available
-                if len(arg) > 2:
-                    opts = arg[2].split(',')
+                if len(arg) > 1:
+                    if len(arg) > 2: opts = arg[2].split(',')
                     url = url.replace(
                         "{{{}}}".format(':'.join(arg)),
                         "{{{}}}".format(arg[0]))
