@@ -5,13 +5,13 @@ A PHP REST wrapper using pluggable API definitions
 
 * [Usage](#usage)
 * [Definitions](#definitions)
-* [Example](#examples)
+* [Examples](#examples)
 
 ## Usage
 
 ## Definitions
 
-[link](definitions)
+[README](definitions)
 
 ## Examples
 
