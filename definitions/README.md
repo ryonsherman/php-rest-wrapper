@@ -4,9 +4,9 @@
    * [Resources](#resources)
    * [Types](#types)
 * [Methods](#methods)
-* [URI Syntax](#urisyntax)
-   * [Parameter tags](#parametertags)
-   * [Replacement values](#replacementvalues)
+* [URI Syntax](#uri-syntax)
+   * [Parameter tags](#parameter-tags)
+   * [Replacement values](#replacement-values)
 
 ## Structure
 
