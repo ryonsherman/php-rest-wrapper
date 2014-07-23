@@ -30,7 +30,8 @@ class CI_RESTWrapper
         }
 
         // API key takes precedence over username/password
-        if (@$params['key']) {
+        if (@$params['key']) 
+        {
             $params['username'] = $params['key'];
             $params['password'] = '';
         }
