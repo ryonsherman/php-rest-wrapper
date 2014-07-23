@@ -1,0 +1,14 @@
+{
+    "Gist": {
+        "root": "/gists",
+
+        "create": ["POST", "{root}", "data"],
+
+        "get": ["GET", "{root}/{gist_id}"],
+        "list": ["GET", "{root}?since={since:}"],
+        "filterPublic": ["GET", "{root}/public?since={since:}"],
+        "filterStarred": ["GET", "{root}/starred?since={since:}"],
+        "filterUser": ["GET", "/users/{username}/gists"],
+        "delete": ["DELETE", "{root}/{gist_id}"]
+    }
+}
