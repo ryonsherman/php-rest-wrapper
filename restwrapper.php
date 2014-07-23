@@ -85,7 +85,10 @@ class RESTWrapper {
         # Determine url
         $url = rtrim($this->url, '/') . '/' . ltrim($resource, '/');
         # Set headers
-        $headers = array("Content-Type: application/json");
+        $headers = array(
+            "User-Agent: php-rest-wrapper",
+            "Content-Type: application/json"
+        );
         # Set credentials
         $credentials = "{$this->username}:{$this->password}";
 
