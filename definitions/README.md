@@ -111,8 +111,9 @@ Before:
 }
 ```
 
+After:
 ```json
-after = {
+{
     "Forum": {
         "root": "/categories/{category_id}/forums",
 
@@ -138,7 +139,7 @@ Replacement values are also helpful for defining a set of options.
 **Example:**
 
 ```json
-before = {
+{
     "User": {
         "root": "/contacts",
         "states": "verified,unverified,all,deleted",

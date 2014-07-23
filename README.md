@@ -11,7 +11,7 @@ A PHP REST wrapper using pluggable API definitions
 
 ## Definitions
 
-[README](definitions)
+[README](definitions/README.md)
 
 ## Examples
 
