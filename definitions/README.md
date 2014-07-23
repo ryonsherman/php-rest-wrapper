@@ -77,15 +77,37 @@ tag={name:default:opt1,opt2} options and default
 
 Replacement values allow you to reduce a commonly used path across multiple method definitions.
 
-* TODO: inheritance
-* TODO: no recursion
+* Values are inherited from parent resources. This allows you to build upon previous paths.
+   * **Example**: `{"root": "{root}/{forum_id}/topics"}`
+* Replacements, however, are not recursively performed on a set of values.
+   * **Not Allowed**: `{"foo": "bar", "baz": "{foo}/qux"}`
 
 **Example:**
 
+Before:
 ```json
 {
     "Forum": {
-        "root": "/forums",
+        "create": ["POST", "/categories/{category_id}/forums.json", "data"],
+        "update": ["PUT", "/categories/{category_id}/forums/{forum_id}.json", "data"],
+        "get": ["GET", "/categories/{category_id}/forums/{forum_id}.json"],
+        "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}"],
+
+        "Topic": {
+            "create": ["POST", "/categories/{category_id}/forums/{forum_id}/topics.json", "data"],
+            "update": ["PUT", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json", "data"],
+            "get": ["GET", "/categories/{category_id}/forums/{forum_id}/topics"],
+            "delete": ["DELETE", "/categories/{category_id}/forums/{forum_id}/topics/{topic_id}.json"]
+        }
+    }
+}
+```
+
+After:
+```json
+{
+    "Forum": {
+        "root": "/categories/{category_id}/forums",
 
         "create": ["POST", "{root}.json", "data"],
         "update": ["PUT", "{root}/{forum_id}.json", "data"],
@@ -99,7 +121,23 @@ Replacement values allow you to reduce a commonly used path across multiple meth
             "update": ["PUT", "{root}/{topic_id}.json", "data"],
             "get": ["GET", "{root}/{topic_id}.json"],
             "delete": ["DELETE", "{root}/{topic_id}.json"]
-        },
+        }
+    }
+}
+```
+
+Replacement values are also helpful for defining a set of options.
+
+**Example:**
+
+```json
+{
+    "User": {
+        "root": "/contacts",
+        "states": "verified,unverified,all,deleted",
+
+        "list": ["GET", "{root}.json?&state={state::{states}}"],
+        "filter": ["GET", "{root}.json?query={query}&state={state::{states}}"]
     }
 }
 ```
