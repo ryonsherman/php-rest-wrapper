@@ -316,9 +316,9 @@ Contact->list([ids][, email][, tag]);
 
 * **Parameters:**
 
-  * `[ids]` *optional*
-  * `[email]` *optional*
-  * `[tag]` *optional*
+  * [`ids`] *optional*
+  * [`email`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -527,8 +527,8 @@ Email->list([ids][, tag]);
 
 * **Parameters:**
 
-  * `[ids]` *optional*
-  * `[tag]` *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -1016,8 +1016,8 @@ Opportunity->list([ids][, tag]);
 
 * **Parameters:**
 
-  * `[ids]` *optional*
-  * `[tag]` *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -1350,9 +1350,9 @@ Organisations->list([ids][, domain][, tag]);
 
 * **Parameters:**
 
-  * `[ids]` *optional*
-  * `[domain]` *optional*
-  * `[tag]` *optional*
+  * [`ids`] *optional*
+  * [`domain`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -1784,8 +1784,8 @@ Projects->list([ids][, tag]);
 
 * **Parameters:**
 
-  * `[ids]` *optional*
-  * `[tag]` *optional*
+  * [`ids`] *optional*
+  * [`tag`] *optional*
 
 * **Curl:**
 
@@ -2137,7 +2137,7 @@ Tasks->list([id]);
 
 * **Parameters:**
 
-  * `[id]` *optional*
+  * [`id`] *optional*
 
 * **Curl:**
 
@@ -2242,7 +2242,7 @@ TeamMembers->list([teamid]);
 
 * **Parameters:**
 
-  * `[teamid]` *optional*
+  * [`teamid`] *optional*
 
 * **Curl:**
 

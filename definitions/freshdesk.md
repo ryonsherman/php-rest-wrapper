@@ -91,7 +91,7 @@ Customer->list([name]);
 
 * **Parameters:**
 
-  * `[name]` *optional*
+  * [`name`] *optional*
 
 * **Curl:**
 
@@ -678,7 +678,7 @@ Solution->Article->create([tags], data);
 
 * **Parameters:**
 
-  * `[tags]` *optional*
+  * [`tags`] *optional*
   * `data` **required**
 
 * **Curl:**
@@ -752,7 +752,7 @@ Solution->Article->update(article_id[, tags], data);
 * **Parameters:**
 
   * `article_id` **required**
-  * `[tags]` *optional*
+  * [`tags`] *optional*
   * `data` **required**
 
 * **Curl:**
@@ -1084,7 +1084,7 @@ Ticket->filterCompany(company_id[, filter = all_tickets]);
 * **Parameters:**
 
   * `company_id` **required**
-  * `[filter]` (default: `all_tickets`)
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1109,7 +1109,7 @@ Ticket->filterCompanyName(name[, filter = all_tickets]);
 * **Parameters:**
 
   * `name` **required**
-  * `[filter]` (default: `all_tickets`)
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1134,7 +1134,7 @@ Ticket->filterEmail(email[, filter = all_tickets]);
 * **Parameters:**
 
   * `email` **required**
-  * `[filter]` (default: `all_tickets`)
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1215,7 +1215,7 @@ Ticket->list([filter = all_tickets]);
 
 * **Parameters:**
 
-  * `[filter]` (default: `all_tickets`)
+  * [`filter`] (default: `all_tickets`)
      * all_tickets
      * new_my_open
      * monitored_by
@@ -1615,13 +1615,13 @@ Ticket->TimeEntry->list([filter][, value]);
 
 * **Parameters:**
 
-  * `[filter]` *optional*
+  * [`filter`] *optional*
      * all_tickets
      * new_my_open
      * monitored_by
      * spam
      * deleted
-  * `[value]` *optional*
+  * [`value`] *optional*
 
 * **Curl:**
 
@@ -1730,7 +1730,7 @@ User->filter(query[, state]);
 * **Parameters:**
 
   * `query` **required**
-  * `[state]` *optional*
+  * [`state`] *optional*
      * verified
      * unverified
      * all
@@ -1772,7 +1772,7 @@ User->list([state]);
 
 * **Parameters:**
 
-  * `[state]` *optional*
+  * [`state`] *optional*
      * verified
      * unverified
      * all
