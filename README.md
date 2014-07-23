@@ -11,6 +11,8 @@ A PHP REST wrapper using pluggable API definitions
 
 ## Definitions
 
+[link](definitions)
+
 ## Examples
 
 ### Creating a Gist
