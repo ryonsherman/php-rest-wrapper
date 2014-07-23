@@ -68,120 +68,120 @@ template = \
 """
 
 def process(definition, outfile, **kwargs):
-    # initialize list of methods and sub-definitions
+    # Initialize list of methods and sub-definitions
     methods, subdefs = {}, {}
-    # attempt to retrieve replacement values
+    # Attempt to retrieve replacement values
     vals = kwargs.get('vals', {})
-    # attempt to retrieve parent name
+    # Attempt to retrieve parent name
     parent = kwargs.get('parent', '')
 
-    # iterate resources and sub-defintions
+    # Iterate resources and sub-defintions
     for res, subdef in definition.iteritems():
-        # assign to list of sub-definitions
+        # Assign to list of sub-definitions
         if type(subdef) is dict:
             subdefs[res] = subdef
-        # assign to list of methods
+        # Assign to list of methods
         elif type(subdef) is list:
             methods[res] = subdef
-        # apply parent replacement value if available
+        # Apply parent replacement value if available
         elif res in vals:
             vals[res] = vals[res].replace(res, subdef)
-        # assign new replacement
+        # Assign new replacement
         else: vals[res] = subdef
 
     methods = collections.OrderedDict(sorted(methods.items()))
     subdefs = collections.OrderedDict(sorted(subdefs.items()))
 
-    # helper to anitize anchors
+    # Helper to anitize anchors
     def anchor(title):
         return ''.join(c for c in title if c.isalnum()).lower()
 
-    # output resource header if not root
+    # Output resource header if not root
     if parent: outfile.write("## {}\n\n".format(
         '<a name="{}"></a>{}'.format(anchor(parent), parent)))
 
-    # helper to return a list linked to anchors
+    # Helper to return a list linked to anchors
     def linked_list(title, items):
         outfile.write("#### {}:\n\n{}\n\n".format(title,
             "\n".join(map(lambda x: "* [{}](#{})".format(x,
                 anchor("{}{}".format(parent, x) if parent else x)),
             items.keys()))))
 
-    # output resource list if available
+    # Output resource list if available
     if subdefs: linked_list('Resources', subdefs)
-    # output method list if available
+    # Output method list if available
     if methods: linked_list('Methods', methods)
 
-    # iterate methods
+    # Iterate methods
     for method, subdef in methods.iteritems():
-        # determine url and http method
+        # Determine url and http method
         url, method_http =  subdef[1], subdef[0].upper()
 
-        # apply replacement values on url
+        # Apply replacement values on url
         for key, val in vals.iteritems():
             url = url.replace("{{{}}}".format(key), val)
 
-        # determine static method path
+        # Determine static method path
         method_static = method
-        # append parent path if available
+        # Append parent path if available
         if parent: method_static = "{}::{}".format(parent, method)
-        # determine instanced method path
+        # Determine instanced method path
         method_instanced = method_static.replace('::', '->')
-        # determine method anchor
+        # Determine method anchor
         method_anchor = anchor(method_static)
 
-        # retrieve or initialize method arguments
+        # Retrieve or initialize method arguments
         args = subdef[2] if len(subdef) > 2 else []
-        # convert to list if string was passed
+        # Convert to list if string was passed
         if type(args) is not list: args = [args]
-        # append passed arguments to those parsed from url
+        # Append passed arguments to those parsed from url
         args = re.findall('{([^}]*)}', url) + args
 
-        # initialize param list and string
+        # Initialize param list and string
         params_list, params_string = '', ''
-        # build param output
+        # Build param output
         if args:
-            # append parameter header
+            # Append parameter header
             params_list += "\n* **Parameters:**\n\n"
-            # iterate args
+            # Iterate args
             for arg in args:
-                # split arg into metadata
+                # Split arg into metadata
                 arg = arg.split(':')
-                # initialize argument options
+                # Initialize argument options
                 opts = []
-                # parse out argument options if available
+                # Parse out argument options if available
                 if len(arg) > 1:
                     if len(arg) > 2: opts = arg[2].split(',')
                     url = url.replace(
                         "{{{}}}".format(':'.join(arg)),
                         "{{{}}}".format(arg[0]))
 
-                # output argument as required
+                # Output argument as required
                 if len(arg) < 2 or arg[1] == '!':
                     params_string += ", {}".format(arg[0])
                     list_item = "`{}` **required**".format(arg[0])
-                # output argument as optional
+                # Output argument as optional
                 elif len(arg) > 1 and not arg[1]:
                     params_string += "[, {}]".format(arg[0])
                     list_item = "[`{}`] *optional*".format(arg[0])
-                # output argument as optional with default
+                # Output argument as optional with default
                 else:
                     params_string += "[, {} = {}]".format(arg[0], arg[1])
                     list_item = "[`{}`] (default: `{}`)".format(arg[0], arg[1])
 
-                # append param list item to output
+                # Append param list item to output
                 params_list += "  * {}\n".format(list_item)
-                # append param options as sub-list if available
+                # Append param options as sub-list if available
                 for opt in opts or []:
                     params_list += "     * {}\n".format(opt)
 
-            # format initial parameter
+            # Format initial parameter
             if params_string.startswith(','):
                 params_string = params_string[2:]
             if params_string.startswith('[, '):
                 params_string = params_string.replace('[, ', '[', 1)
 
-        # determine `curl` command output
+        # Determine `curl` command output
         curl = "curl "
         curl += "-u 'username:password' "
         curl += "-H 'application/json' "
@@ -189,27 +189,27 @@ def process(definition, outfile, **kwargs):
         curl += "-X '{}' ".format(method_http)
         curl += "'{}'".format(url)
 
-        # output to file
+        # Output to file
         outfile.write("{}\n".format(template.format(**locals())))
 
-    # iterate sub-definitions
+    # Iterate sub-definitions
     for res, subdef in subdefs.iteritems():
-        # prepend parent resource if available
+        # Prepend parent resource if available
         if parent: res = "{}::{}".format(parent, res)
-        # recurse sub-definition
+        # Recurse sub-definition
         process(subdef, outfile, parent=res, vals=vals)
 
-# iterate each filename in path
+# Iterate each filename in path
 for filename in path:
-    # determine filename, extension, and module name
+    # Determine filename, extension, and module name
     name, ext = os.path.splitext(filename)
     module = name.split('/')[-1]
 
-    # open markdown file
+    # Open markdown file
     with open("{}.md".format(name), 'w') as outfile:
-        # output file header
+        # Output file header
         outfile.write("{}\n\n".format(header.format(**locals())))
 
-        # process file
+        # Process file
         with open(filename, 'rb') as infile:
             process(json.load(infile), outfile)
