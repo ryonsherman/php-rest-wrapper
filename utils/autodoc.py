@@ -6,6 +6,7 @@ import sys
 import glob
 import json
 import argparse
+import collections
 
 parser = argparse.ArgumentParser()
 parser.add_argument('path')
@@ -60,6 +61,9 @@ def process(definition, outfile, **kwargs):
             vals[res] = vals[res].replace(res, subdef)
         # assign new replacement
         else: vals[res] = subdef
+
+    methods = collections.OrderedDict(sorted(methods.items()))
+    subdefs = collections.OrderedDict(sorted(subdefs.items()))
 
     # helper to anitize anchors
     def anchor(title):
@@ -134,11 +138,11 @@ def process(definition, outfile, **kwargs):
                 # output argument as optional
                 elif len(arg) > 1 and not arg[1]:
                     params_string += "[, {}]".format(arg[0])
-                    list_item = "[`{}`] *optional*".format(arg[0])
+                    list_item = "`[{}]` *optional*".format(arg[0])
                 # output argument as optional with default
                 else:
                     params_string += "[, {} = {}]".format(arg[0], arg[1])
-                    list_item = "[`{}`] (default: `{}`)".format(arg[0], arg[1])
+                    list_item = "`[{}]` (default: `{}`)".format(arg[0], arg[1])
 
                 # append param list item to output
                 params_list += "  * {}\n".format(list_item)
