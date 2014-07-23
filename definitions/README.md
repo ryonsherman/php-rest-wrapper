@@ -1,5 +1,13 @@
 # API Definitions
 
+* [Structure](#structure)
+   * [Resources](#resources)
+   * [Types](#types)
+* [Methods](#methods)
+* [URI Syntax](#urisyntax)
+   * [Parameter tags](#parametertags)
+   * [Replacement values](#replacementvalues)
+
 ## Structure
 
 * Definitions should named `{api_name}.json`
@@ -103,9 +111,8 @@ Before:
 }
 ```
 
-After:
 ```json
-{
+after = {
     "Forum": {
         "root": "/categories/{category_id}/forums",
 
@@ -131,7 +138,7 @@ Replacement values are also helpful for defining a set of options.
 **Example:**
 
 ```json
-{
+before = {
     "User": {
         "root": "/contacts",
         "states": "verified,unverified,all,deleted",
